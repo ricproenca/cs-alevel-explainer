@@ -1,0 +1,105 @@
+---
+import "@fontsource-variable/atkinson-hyperlegible-next";
+import "@fontsource-variable/atkinson-hyperlegible-mono";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    color-scheme: light;
+    --paper: #edf3f8;
+    --grid: #d9e5ee;
+    --sheet: #ffffff;
+    --ink: #14213d;
+    --muted: #4a5875;
+    --highlighter: #ffe45c;
+    --pointer: #c2185b;
+    --examiner: #0b7a4b;
+    --body-font: "Atkinson Hyperlegible Next Variable", system-ui, sans-serif;
+    --code-font: "Atkinson Hyperlegible Mono Variable", ui-monospace, monospace;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--body-font);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    background-color: var(--paper);
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  code {
+    font-family: var(--code-font);
+    font-size: 0.94em;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  button,
+  input,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--pointer);
+    outline-offset: 2px;
+  }
+
+  .page {
+    width: min(100%, 1240px);
+    margin-inline: auto;
+    padding: 32px 24px 72px;
+  }
+
+  .prose {
+    max-width: 68ch;
+  }
+
+  @media (max-width: 600px) {
+    .page {
+      padding: 20px 16px 48px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+</style>

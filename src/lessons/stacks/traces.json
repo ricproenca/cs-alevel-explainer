@@ -1,0 +1,2521 @@
+{
+  "start-at-0/peek-and-checks": {
+    "source": [
+      "StackSize = 3",
+      "Stack = [\"\"] * StackSize",
+      "TopPointer = 0",
+      "",
+      "",
+      "def Push(Item):",
+      "    global TopPointer",
+      "    if TopPointer == StackSize:",
+      "        print(\"Stack full\")",
+      "    else:",
+      "        Stack[TopPointer] = Item",
+      "        TopPointer = TopPointer + 1",
+      "",
+      "",
+      "def Peek():",
+      "    if TopPointer == 0:",
+      "        return \"\"",
+      "    else:",
+      "        return Stack[TopPointer - 1]",
+      "",
+      "",
+      "def IsEmpty():",
+      "    if TopPointer == 0:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "def IsFull():",
+      "    if TopPointer == StackSize:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "# Main program",
+      "print(IsEmpty())",
+      "Push(\"A\")",
+      "print(Peek())",
+      "print(IsFull())"
+    ],
+    "steps": [
+      {
+        "line": 1,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3
+        },
+        "output": []
+      },
+      {
+        "line": 2,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "output": []
+      },
+      {
+        "line": 3,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 6,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 22,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 29,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 37,
+        "event": "line",
+        "scope": "IsEmpty",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 23,
+        "event": "line",
+        "scope": "IsEmpty",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 24,
+        "event": "line",
+        "scope": "IsEmpty",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 37,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 38,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 7,
+        "event": "global",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 12,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 39,
+        "event": "line",
+        "scope": "Peek",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 1
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Peek",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 1
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 19,
+        "event": "line",
+        "scope": "Peek",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 1
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 39,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 1
+        },
+        "output": [
+          "True",
+          "A"
+        ]
+      },
+      {
+        "line": 40,
+        "event": "line",
+        "scope": "IsFull",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 1
+        },
+        "output": [
+          "True",
+          "A"
+        ]
+      },
+      {
+        "line": 30,
+        "event": "line",
+        "scope": "IsFull",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 1
+        },
+        "output": [
+          "True",
+          "A"
+        ]
+      },
+      {
+        "line": 33,
+        "event": "line",
+        "scope": "IsFull",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 1
+        },
+        "output": [
+          "True",
+          "A"
+        ]
+      },
+      {
+        "line": 40,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 1
+        },
+        "output": [
+          "True",
+          "A",
+          "False"
+        ]
+      }
+    ]
+  },
+  "start-at-0/push-and-pop": {
+    "source": [
+      "StackSize = 3",
+      "Stack = [\"\"] * StackSize",
+      "TopPointer = 0",
+      "",
+      "",
+      "def Push(Item):",
+      "    global TopPointer",
+      "    if TopPointer == StackSize:",
+      "        print(\"Stack full\")",
+      "    else:",
+      "        Stack[TopPointer] = Item",
+      "        TopPointer = TopPointer + 1",
+      "",
+      "",
+      "def Pop():",
+      "    global TopPointer",
+      "    if TopPointer == 0:",
+      "        print(\"Stack empty\")",
+      "        return \"\"",
+      "    else:",
+      "        TopPointer = TopPointer - 1",
+      "        Item = Stack[TopPointer]",
+      "        return Item",
+      "",
+      "",
+      "# Main program",
+      "Push(\"A\")",
+      "Push(\"B\")",
+      "Removed = Pop()",
+      "print(Removed)",
+      "Push(\"C\")"
+    ],
+    "steps": [
+      {
+        "line": 1,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3
+        },
+        "output": []
+      },
+      {
+        "line": 2,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "output": []
+      },
+      {
+        "line": 3,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 6,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 27,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 7,
+        "event": "global",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 12,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 28,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 7,
+        "event": "global",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 12,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 2,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 29,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 2
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "global",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 2
+        },
+        "output": []
+      },
+      {
+        "line": 17,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 2
+        },
+        "output": []
+      },
+      {
+        "line": 21,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1
+        },
+        "output": []
+      },
+      {
+        "line": 22,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 23,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 29,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1,
+          "Removed": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 30,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1,
+          "Removed": "B"
+        },
+        "output": [
+          "B"
+        ]
+      },
+      {
+        "line": 31,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1,
+          "Removed": "B",
+          "Item": "C"
+        },
+        "output": [
+          "B"
+        ]
+      },
+      {
+        "line": 7,
+        "event": "global",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1,
+          "Removed": "B",
+          "Item": "C"
+        },
+        "output": [
+          "B"
+        ]
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1,
+          "Removed": "B",
+          "Item": "C"
+        },
+        "output": [
+          "B"
+        ]
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "C",
+            ""
+          ],
+          "TopPointer": 1,
+          "Removed": "B",
+          "Item": "C"
+        },
+        "output": [
+          "B"
+        ]
+      },
+      {
+        "line": 12,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "C",
+            ""
+          ],
+          "TopPointer": 2,
+          "Removed": "B",
+          "Item": "C"
+        },
+        "output": [
+          "B"
+        ]
+      }
+    ]
+  },
+  "start-at-0/stack-empty": {
+    "source": [
+      "StackSize = 3",
+      "Stack = [\"\"] * StackSize",
+      "TopPointer = 0",
+      "",
+      "",
+      "def Pop():",
+      "    global TopPointer",
+      "    if TopPointer == 0:",
+      "        print(\"Stack empty\")",
+      "        return \"\"",
+      "    else:",
+      "        TopPointer = TopPointer - 1",
+      "        Item = Stack[TopPointer]",
+      "        return Item",
+      "",
+      "",
+      "# Main program",
+      "Removed = Pop()",
+      "print(Removed)"
+    ],
+    "steps": [
+      {
+        "line": 1,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3
+        },
+        "output": []
+      },
+      {
+        "line": 2,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "output": []
+      },
+      {
+        "line": 3,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 6,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 18,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 7,
+        "event": "global",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": [
+          "Stack empty"
+        ]
+      },
+      {
+        "line": 10,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": [
+          "Stack empty"
+        ]
+      },
+      {
+        "line": 18,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Removed": ""
+        },
+        "output": [
+          "Stack empty"
+        ]
+      },
+      {
+        "line": 19,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Removed": ""
+        },
+        "output": [
+          "Stack empty",
+          ""
+        ]
+      }
+    ]
+  },
+  "start-at-0/stack-full": {
+    "source": [
+      "StackSize = 3",
+      "Stack = [\"A\", \"B\", \"C\"]",
+      "TopPointer = 3",
+      "",
+      "",
+      "def Push(Item):",
+      "    global TopPointer",
+      "    if TopPointer == StackSize:",
+      "        print(\"Stack full\")",
+      "    else:",
+      "        Stack[TopPointer] = Item",
+      "        TopPointer = TopPointer + 1",
+      "",
+      "",
+      "# Main program",
+      "Push(\"D\")"
+    ],
+    "steps": [
+      {
+        "line": 1,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3
+        },
+        "output": []
+      },
+      {
+        "line": 2,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        "output": []
+      },
+      {
+        "line": 3,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            "C"
+          ],
+          "TopPointer": 3
+        },
+        "output": []
+      },
+      {
+        "line": 6,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            "C"
+          ],
+          "TopPointer": 3
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            "C"
+          ],
+          "TopPointer": 3,
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 7,
+        "event": "global",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            "C"
+          ],
+          "TopPointer": 3,
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            "C"
+          ],
+          "TopPointer": 3,
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            "C"
+          ],
+          "TopPointer": 3,
+          "Item": "D"
+        },
+        "output": [
+          "Stack full"
+        ]
+      }
+    ]
+  },
+  "start-at-minus-1/peek-and-checks": {
+    "source": [
+      "StackSize = 3",
+      "Stack = [\"\"] * StackSize",
+      "TopPointer = -1",
+      "",
+      "",
+      "def Push(Item):",
+      "    global TopPointer",
+      "    if TopPointer == StackSize - 1:",
+      "        print(\"Stack full\")",
+      "    else:",
+      "        TopPointer = TopPointer + 1",
+      "        Stack[TopPointer] = Item",
+      "",
+      "",
+      "def Peek():",
+      "    if TopPointer == -1:",
+      "        return \"\"",
+      "    else:",
+      "        return Stack[TopPointer]",
+      "",
+      "",
+      "def IsEmpty():",
+      "    if TopPointer == -1:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "def IsFull():",
+      "    if TopPointer == StackSize - 1:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "# Main program",
+      "print(IsEmpty())",
+      "Push(\"A\")",
+      "print(Peek())",
+      "print(IsFull())"
+    ],
+    "steps": [
+      {
+        "line": 1,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3
+        },
+        "output": []
+      },
+      {
+        "line": 2,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "output": []
+      },
+      {
+        "line": 3,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 6,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 22,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 29,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 37,
+        "event": "line",
+        "scope": "IsEmpty",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 23,
+        "event": "line",
+        "scope": "IsEmpty",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 24,
+        "event": "line",
+        "scope": "IsEmpty",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 37,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 38,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 7,
+        "event": "global",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 12,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 39,
+        "event": "line",
+        "scope": "Peek",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Peek",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 19,
+        "event": "line",
+        "scope": "Peek",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 39,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": [
+          "True",
+          "A"
+        ]
+      },
+      {
+        "line": 40,
+        "event": "line",
+        "scope": "IsFull",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": [
+          "True",
+          "A"
+        ]
+      },
+      {
+        "line": 30,
+        "event": "line",
+        "scope": "IsFull",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": [
+          "True",
+          "A"
+        ]
+      },
+      {
+        "line": 33,
+        "event": "line",
+        "scope": "IsFull",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": [
+          "True",
+          "A"
+        ]
+      },
+      {
+        "line": 40,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": [
+          "True",
+          "A",
+          "False"
+        ]
+      }
+    ]
+  },
+  "start-at-minus-1/push-and-pop": {
+    "source": [
+      "StackSize = 3",
+      "Stack = [\"\"] * StackSize",
+      "TopPointer = -1",
+      "",
+      "",
+      "def Push(Item):",
+      "    global TopPointer",
+      "    if TopPointer == StackSize - 1:",
+      "        print(\"Stack full\")",
+      "    else:",
+      "        TopPointer = TopPointer + 1",
+      "        Stack[TopPointer] = Item",
+      "",
+      "",
+      "def Pop():",
+      "    global TopPointer",
+      "    if TopPointer == -1:",
+      "        print(\"Stack empty\")",
+      "        return \"\"",
+      "    else:",
+      "        Item = Stack[TopPointer]",
+      "        TopPointer = TopPointer - 1",
+      "        return Item",
+      "",
+      "",
+      "# Main program",
+      "Push(\"A\")",
+      "Push(\"B\")",
+      "Removed = Pop()",
+      "print(Removed)",
+      "Push(\"C\")"
+    ],
+    "steps": [
+      {
+        "line": 1,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3
+        },
+        "output": []
+      },
+      {
+        "line": 2,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "output": []
+      },
+      {
+        "line": 3,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 6,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 27,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 7,
+        "event": "global",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 12,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 28,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 7,
+        "event": "global",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 12,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 29,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "global",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1
+        },
+        "output": []
+      },
+      {
+        "line": 17,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1
+        },
+        "output": []
+      },
+      {
+        "line": 21,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 22,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 23,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 29,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 0,
+          "Removed": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 30,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 0,
+          "Removed": "B"
+        },
+        "output": [
+          "B"
+        ]
+      },
+      {
+        "line": 31,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 0,
+          "Removed": "B",
+          "Item": "C"
+        },
+        "output": [
+          "B"
+        ]
+      },
+      {
+        "line": 7,
+        "event": "global",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 0,
+          "Removed": "B",
+          "Item": "C"
+        },
+        "output": [
+          "B"
+        ]
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 0,
+          "Removed": "B",
+          "Item": "C"
+        },
+        "output": [
+          "B"
+        ]
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1,
+          "Removed": "B",
+          "Item": "C"
+        },
+        "output": [
+          "B"
+        ]
+      },
+      {
+        "line": 12,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "C",
+            ""
+          ],
+          "TopPointer": 1,
+          "Removed": "B",
+          "Item": "C"
+        },
+        "output": [
+          "B"
+        ]
+      }
+    ]
+  },
+  "start-at-minus-1/stack-empty": {
+    "source": [
+      "StackSize = 3",
+      "Stack = [\"\"] * StackSize",
+      "TopPointer = -1",
+      "",
+      "",
+      "def Pop():",
+      "    global TopPointer",
+      "    if TopPointer == -1:",
+      "        print(\"Stack empty\")",
+      "        return \"\"",
+      "    else:",
+      "        Item = Stack[TopPointer]",
+      "        TopPointer = TopPointer - 1",
+      "        return Item",
+      "",
+      "",
+      "# Main program",
+      "Removed = Pop()",
+      "print(Removed)"
+    ],
+    "steps": [
+      {
+        "line": 1,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3
+        },
+        "output": []
+      },
+      {
+        "line": 2,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "output": []
+      },
+      {
+        "line": 3,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 6,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 18,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 7,
+        "event": "global",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": [
+          "Stack empty"
+        ]
+      },
+      {
+        "line": 10,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": [
+          "Stack empty"
+        ]
+      },
+      {
+        "line": 18,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1,
+          "Removed": ""
+        },
+        "output": [
+          "Stack empty"
+        ]
+      },
+      {
+        "line": 19,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1,
+          "Removed": ""
+        },
+        "output": [
+          "Stack empty",
+          ""
+        ]
+      }
+    ]
+  },
+  "start-at-minus-1/stack-full": {
+    "source": [
+      "StackSize = 3",
+      "Stack = [\"A\", \"B\", \"C\"]",
+      "TopPointer = 2",
+      "",
+      "",
+      "def Push(Item):",
+      "    global TopPointer",
+      "    if TopPointer == StackSize - 1:",
+      "        print(\"Stack full\")",
+      "    else:",
+      "        TopPointer = TopPointer + 1",
+      "        Stack[TopPointer] = Item",
+      "",
+      "",
+      "# Main program",
+      "Push(\"D\")"
+    ],
+    "steps": [
+      {
+        "line": 1,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3
+        },
+        "output": []
+      },
+      {
+        "line": 2,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        "output": []
+      },
+      {
+        "line": 3,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            "C"
+          ],
+          "TopPointer": 2
+        },
+        "output": []
+      },
+      {
+        "line": 6,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            "C"
+          ],
+          "TopPointer": 2
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            "C"
+          ],
+          "TopPointer": 2,
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 7,
+        "event": "global",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            "C"
+          ],
+          "TopPointer": 2,
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            "C"
+          ],
+          "TopPointer": 2,
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            "C"
+          ],
+          "TopPointer": 2,
+          "Item": "D"
+        },
+        "output": [
+          "Stack full"
+        ]
+      }
+    ]
+  }
+}
