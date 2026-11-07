@@ -33,7 +33,9 @@ export function createStackVisual(container: HTMLElement) {
     },
 
     // Returns whether any cell holds a leftover value, so the key can be shown.
-    render(step: ScenarioStep, previous: ScenarioStep | undefined) {
+    render(steps: ScenarioStep[], current: number) {
+      const step = steps[current];
+      const previous = steps[current - 1];
       const stack = step.vars.Stack as string[] | undefined;
       const top = step.vars.TopPointer as number | undefined;
       const itemsBelowPointer = algorithm.itemsBelowPointer ?? 1;

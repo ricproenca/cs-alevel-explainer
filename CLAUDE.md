@@ -19,8 +19,7 @@ components. Lessons share a layout and step-through widgets.
 
 ## Scope
 
-Lessons so far: stacks and linear queues (Abstract Data Types). Circular queues
-come next, starting from the linear queue's "Full but with free space" example.
+Lessons so far: stacks, linear queues and circular queues (Abstract Data Types).
 Don't start other topics until told what comes next.
 
 ## Working on lessons

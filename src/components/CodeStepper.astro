@@ -4,7 +4,7 @@ import type { Algorithm } from "../lib/stepper";
 interface Props {
   algorithms: Algorithm[];
   // Which drawing of the data structure to show.
-  visual: "stack" | "queue";
+  visual: "stack" | "queue" | "circular-queue";
   // Variables listed beside the drawing, e.g. ["StackSize", "Item"].
   variables: string[];
 }
@@ -125,7 +125,11 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
   import { createQueueVisual } from "../lib/visuals/queue";
   import { createStackVisual } from "../lib/visuals/stack";
 
-  const VISUALS = { stack: createStackVisual, queue: createQueueVisual };
+  const VISUALS = {
+    stack: createStackVisual,
+    queue: createQueueVisual,
+    "circular-queue": (container: HTMLElement) => createQueueVisual(container, { circular: true }),
+  };
 
   const STEP_DELAYS: Record<string, number> = { slow: 1800, normal: 1100, fast: 550 };
 
@@ -275,7 +279,7 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
       next.disabled = current === lastStep();
       skip.disabled = !scenario.steps[current + 1]?.inFunction;
 
-      key.hidden = !visual.render(step, scenario.steps[current - 1]);
+      key.hidden = !visual.render(scenario.steps, current);
       renderVars(step);
       find("[data-output]").textContent = step.output.join("\n") || " ";
       renderTrace();
@@ -864,6 +868,44 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
     animation: cell-stored 420ms ease-out;
   }
 
+  .queue--circular {
+    padding-bottom: 84px;
+  }
+
+  .queue__wrap {
+    position: absolute;
+    bottom: 18px;
+    left: calc(1.5 * var(--queue-cell));
+    width: calc((var(--queue-slots) - 3) * var(--queue-cell));
+    height: 16px;
+    margin: 0;
+    border: 2px dashed var(--muted);
+    border-top: 0;
+    border-radius: 0 0 14px 14px;
+  }
+
+  .queue__wrap span {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    transform: translateX(-50%);
+  }
+
+  .queue__wrap::before {
+    position: absolute;
+    top: -8px;
+    left: -7px;
+    width: 0;
+    height: 0;
+    border-inline: 6px solid transparent;
+    border-bottom: 9px solid var(--muted);
+    content: "";
+  }
+
   .queue__pointer {
     position: absolute;
     left: calc((var(--slot, 0) + 1.5) * var(--queue-cell));
@@ -902,7 +944,7 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
   }
 
   .queue__pointer--head {
-    bottom: 0;
+    top: calc(44px + var(--queue-cell) + 4px);
     flex-direction: column-reverse;
     color: var(--examiner);
   }

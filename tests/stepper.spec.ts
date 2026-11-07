@@ -1,4 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
+import { algorithms as circularQueueAlgorithms } from "../src/lessons/circular-queues/lesson";
 import { algorithms as queueAlgorithms } from "../src/lessons/queues/lesson";
 import { algorithms as stackAlgorithms } from "../src/lessons/stacks/lesson";
 
@@ -21,7 +22,25 @@ const lessons = [
       { selector: "[data-head-label]", name: "HeadPointer" },
     ],
   },
+  {
+    url: "lessons/circular-queues",
+    algorithms: circularQueueAlgorithms,
+    array: "Queue",
+    pointers: [
+      { selector: "[data-tail-label]", name: "TailPointer" },
+      { selector: "[data-head-label]", name: "HeadPointer" },
+    ],
+  },
 ];
+
+const queuedCells = (page: Page) =>
+  page
+    .locator("[data-cell]")
+    .evaluateAll((cells) =>
+      cells
+        .filter((cell) => cell.classList.contains("is-in-queue"))
+        .map((cell) => cell.querySelector("[data-value]")!.textContent),
+    );
 
 const count = (page: Page) => page.locator("[data-count]");
 const currentLine = (page: Page) => page.locator(".code__line.is-current");
@@ -73,6 +92,34 @@ for (const lesson of lessons) {
     }
   }
 }
+
+test("a circular queue's tail wraps round into the space at the front", async ({ page }) => {
+  await page.goto("lessons/circular-queues?algorithm=tail-at-minus-1&example=tail-wraps-round&step=53");
+  await expect(page.locator("[data-tail-label]")).toHaveText("TailPointer = 0");
+  await expect(page.locator("[data-cell='0'] [data-value]")).toHaveText("D");
+  expect(await queuedCells(page)).toEqual(["D", "B", "C"]);
+  await expect(page.locator("[data-output]")).not.toContainText("Queue full");
+});
+
+test("a circular queue's head wraps round and leftovers aren't counted mid-Dequeue", async ({ page }) => {
+  const steps = circularQueueAlgorithms[0].scenarios.find((s) => s.id === "head-wraps-round")!.steps;
+  await page.goto("lessons/circular-queues?algorithm=tail-at-minus-1&example=head-wraps-round&step=1");
+  for (let index = 0; index < steps.length; index += 1) {
+    if (index > 0) await page.keyboard.press("ArrowRight");
+    if (steps[index].scope !== "Dequeue") continue;
+    let callStart = index;
+    while (steps[callStart - 1]?.scope === "Dequeue") callStart -= 1;
+    let callEnd = index;
+    while (steps[callEnd + 1]?.scope === "Dequeue") callEnd += 1;
+    // Once HeadPointer has moved, the removed item no longer counts, even
+    // though NumberItems hasn't gone down yet.
+    const headMoved = steps[index].vars.HeadPointer !== steps[callStart].vars.HeadPointer;
+    const expected = steps[headMoved ? callEnd : index].vars.NumberItems;
+    expect((await queuedCells(page)).length, `step ${index + 1}`).toBe(expected);
+  }
+  await expect(page.locator("[data-head-label]")).toHaveText("HeadPointer = 0");
+  expect(await queuedCells(page)).toEqual([]);
+});
 
 test("a linear queue can be full while the front of the array is free", async ({ page }) => {
   await page.goto("lessons/queues?algorithm=tail-at-minus-1&example=full-with-free-space&step=45");
@@ -168,6 +215,7 @@ test("clicking a trace table row jumps to that step", async ({ page }) => {
 for (const path of [
   "lessons/stacks?algorithm=start-at-0&example=stack-full&step=27",
   "lessons/queues?algorithm=tail-at-0&example=queue-full&step=36",
+  "lessons/circular-queues?algorithm=tail-at-minus-1&example=tail-wraps-round&step=40",
 ]) {
   test(`${path.split("?")[0]} fits a phone screen without sideways scrolling`, async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 700 });

@@ -14,6 +14,9 @@ table that fills in as you go.
 - [Linear queues](https://ricproenca.github.io/cs-alevel-explainer/lessons/queues):
   enqueue, dequeue, peek, `IsEmpty` and `IsFull`, with `TailPointer` starting at
   -1 or at 0, and why a linear queue can fill up while space is free.
+- [Circular queues](https://ricproenca.github.io/cs-alevel-explainer/lessons/circular-queues):
+  the same operations, with both pointers wrapping round to index 0 so freed
+  space is reused.
 
 ## Running it locally
 

@@ -9,7 +9,7 @@ import {
 } from "../../lib/stepper";
 import traces from "./traces.json" with { type: "json" };
 
-const columns: TraceColumn[] = [
+export const columns: TraceColumn[] = [
   { key: "HeadPointer", label: "HeadPointer" },
   { key: "TailPointer", label: "TailPointer" },
   { key: "NumberItems", label: "NumberItems" },
@@ -42,7 +42,8 @@ const fullCheck = (limitName: string, limit: (queueSize: number) => number): Exp
     return `${check} is ${value}. They don't match, so ${nextStep} and Python moves to the \`else\` part.`;
   };
 
-const sharedExplanations: Record<string, Explain> = {
+// Also used by the circular queue lesson, which shares most of its code.
+export const sharedExplanations: Record<string, Explain> = {
   "QueueSize = 3":
     "Sets how many items the queue can hold. The array has a fixed size, so this queue can never hold more than 3 items.",
   'Queue = [""] * QueueSize':

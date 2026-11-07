@@ -1,0 +1,35 @@
+---
+import CodeStepper from "../../components/CodeStepper.astro";
+import LessonLayout from "../../layouts/LessonLayout.astro";
+import { algorithms, variables } from "../../lessons/circular-queues/lesson";
+import { pageUrl } from "../../lib/links";
+---
+
+<LessonLayout
+  title="Circular queues | A Level Computer Science"
+  description="Learn how a circular queue works in Python, one line at a time, for Cambridge International A Level Computer Science (9618)."
+>
+  <main class="page">
+    <p class="crumb"><a href={pageUrl()}>Cambridge A Level Computer Science (9618)</a> / Abstract data types</p>
+    <h1 class="lesson-title">Circular queues</h1>
+    <div class="prose lesson-intro">
+      <p class="lesson-lead">A circular queue reuses the space at the front of the array.</p>
+      <p>
+        In a <a href={pageUrl("lessons/queues")}>linear queue</a>, the pointers only move forwards, so the queue can report full while the front of the array is empty.
+        A circular queue fixes this: when a pointer goes past the end of the array, it wraps round to index 0.
+      </p>
+      <p>
+        The code is almost the same as the linear queue. <code>HeadPointer</code> holds the index of the front item, <code>TailPointer</code> marks the back, and <code>NumberItems</code> counts the items.
+        There are two differences. After each pointer moves, an <code>if</code> sends it back to 0 at the end of the array. And because <code>TailPointer</code> can wrap round, the queue is full when <code>NumberItems</code> equals <code>QueueSize</code>, not when <code>TailPointer</code> reaches the end.
+      </p>
+    </div>
+
+    <section class="lesson-section">
+      <h2>Watch the code run</h2>
+      <p class="prose">
+        Select <strong>Next line</strong> to run the code one line at a time. The yellow line has just run. The pink arrow shows <code>TailPointer</code>, and the green arrow shows <code>HeadPointer</code>. Start with <strong>Tail wraps round</strong> to see the linear queue's problem fixed.
+      </p>
+      <CodeStepper algorithms={algorithms} visual="circular-queue" variables={variables} />
+    </section>
+  </main>
+</LessonLayout>
