@@ -1,49 +1,86 @@
 import { expect, test, type Page } from "@playwright/test";
-import { algorithms } from "../src/lessons/stacks/lesson";
+import { algorithms as queueAlgorithms } from "../src/lessons/queues/lesson";
+import { algorithms as stackAlgorithms } from "../src/lessons/stacks/lesson";
 
 const lessonUrl = "lessons/stacks";
+
+// Each lesson's array variable, and the pointer labels its drawing shows.
+const lessons = [
+  {
+    url: "lessons/stacks",
+    algorithms: stackAlgorithms,
+    array: "Stack",
+    pointers: [{ selector: "[data-pointer-label]", name: "TopPointer" }],
+  },
+  {
+    url: "lessons/queues",
+    algorithms: queueAlgorithms,
+    array: "Queue",
+    pointers: [
+      { selector: "[data-tail-label]", name: "TailPointer" },
+      { selector: "[data-head-label]", name: "HeadPointer" },
+    ],
+  },
+];
 
 const count = (page: Page) => page.locator("[data-count]");
 const currentLine = (page: Page) => page.locator(".code__line.is-current");
 const lineNumberOf = (page: Page) =>
   currentLine(page).evaluate((line) => [...line.parentElement!.children].indexOf(line) + 1);
 
-for (const algorithm of algorithms) {
-  for (const scenario of algorithm.scenarios) {
-    test(`${algorithm.id} / ${scenario.id}: every step shows the traced state`, async ({ page }) => {
-      await page.goto(lessonUrl);
-      await page.getByRole("button", { name: algorithm.label, exact: true }).click();
-      await page.getByRole("button", { name: scenario.label, exact: true }).click();
+for (const lesson of lessons) {
+  for (const algorithm of lesson.algorithms) {
+    for (const scenario of algorithm.scenarios) {
+      test(`${lesson.url} / ${algorithm.id} / ${scenario.id}: every step shows the traced state`, async ({
+        page,
+      }) => {
+        await page.goto(lesson.url);
+        await page.getByRole("button", { name: algorithm.label, exact: true }).click();
+        await page.getByRole("button", { name: scenario.label, exact: true }).click();
 
-      // Checking every step in the browser keeps this test fast.
-      const mismatches = await page.evaluate((steps) => {
-        const next = document.querySelector<HTMLButtonElement>("[data-next]")!;
-        const problems: string[] = [];
-        steps.forEach((step, index) => {
-          if (index > 0) next.click();
-          const line = document.querySelector(".code__line.is-current")!;
-          const lineNumber = [...line.parentElement!.children].indexOf(line) + 1;
-          if (lineNumber !== step.line) problems.push(`step ${index + 1}: line ${lineNumber}`);
-          const stack = (step.vars.Stack as string[] | undefined) ?? [];
-          document.querySelectorAll<HTMLElement>("[data-cell]").forEach((cell) => {
-            const shown = cell.querySelector(".tower__value")!.textContent;
-            if (shown !== (stack[Number(cell.dataset.cell)] ?? "")) {
-              problems.push(`step ${index + 1}: cell ${cell.dataset.cell} shows "${shown}"`);
-            }
-          });
-          const label = document.querySelector("[data-pointer-label]")!.textContent;
-          if (step.vars.TopPointer !== undefined && label !== `TopPointer = ${step.vars.TopPointer}`) {
-            problems.push(`step ${index + 1}: pointer shows "${label}"`);
-          }
-        });
-        return problems;
-      }, scenario.steps);
+        // Checking every step in the browser keeps this test fast.
+        const mismatches = await page.evaluate(
+          ({ steps, array, pointers }) => {
+            const next = document.querySelector<HTMLButtonElement>("[data-next]")!;
+            const problems: string[] = [];
+            steps.forEach((step, index) => {
+              if (index > 0) next.click();
+              const line = document.querySelector(".code__line.is-current")!;
+              const lineNumber = [...line.parentElement!.children].indexOf(line) + 1;
+              if (lineNumber !== step.line) problems.push(`step ${index + 1}: line ${lineNumber}`);
+              const values = (step.vars[array] as string[] | undefined) ?? [];
+              document.querySelectorAll<HTMLElement>("[data-cell]").forEach((cell) => {
+                const shown = cell.querySelector("[data-value]")!.textContent;
+                if (shown !== (values[Number(cell.dataset.cell)] ?? "")) {
+                  problems.push(`step ${index + 1}: cell ${cell.dataset.cell} shows "${shown}"`);
+                }
+              });
+              for (const { selector, name } of pointers) {
+                const label = document.querySelector(selector)!.textContent;
+                if (step.vars[name] !== undefined && label !== `${name} = ${step.vars[name]}`) {
+                  problems.push(`step ${index + 1}: ${name} shows "${label}"`);
+                }
+              }
+            });
+            return problems;
+          },
+          { steps: scenario.steps, array: lesson.array, pointers: lesson.pointers },
+        );
 
-      expect(mismatches).toEqual([]);
-      await expect(count(page)).toHaveText(`Step ${scenario.steps.length} of ${scenario.steps.length}`);
-    });
+        expect(mismatches).toEqual([]);
+        await expect(count(page)).toHaveText(`Step ${scenario.steps.length} of ${scenario.steps.length}`);
+      });
+    }
   }
 }
+
+test("a linear queue can be full while the front of the array is free", async ({ page }) => {
+  await page.goto("lessons/queues?algorithm=tail-at-minus-1&example=full-with-free-space&step=45");
+  await expect(page.locator("[data-output]")).toHaveText("Queue full");
+  await expect(page.locator("[data-vars]")).toContainText("NumberItems2");
+  await expect(page.locator("[data-cell='0']")).toHaveClass(/is-leftover/);
+  await expect(page.locator("[data-key]")).toBeVisible();
+});
 
 test("Skip function runs a whole call and stops in the main program", async ({ page }) => {
   await page.goto(`${lessonUrl}?algorithm=start-at-minus-1&example=push-and-pop&step=1`);
@@ -128,11 +165,16 @@ test("clicking a trace table row jumps to that step", async ({ page }) => {
   expect(await lineNumberOf(page)).toBe(2);
 });
 
-test("the lesson fits a phone screen without sideways scrolling", async ({ page }) => {
-  await page.setViewportSize({ width: 375, height: 700 });
-  await page.goto(`${lessonUrl}?algorithm=start-at-0&example=stack-full&step=27`);
-  const overflow = await page.evaluate(
-    () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
-  );
-  expect(overflow).toBe(0);
-});
+for (const path of [
+  "lessons/stacks?algorithm=start-at-0&example=stack-full&step=27",
+  "lessons/queues?algorithm=tail-at-0&example=queue-full&step=36",
+]) {
+  test(`${path.split("?")[0]} fits a phone screen without sideways scrolling`, async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 700 });
+    await page.goto(path);
+    const overflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+    );
+    expect(overflow).toBe(0);
+  });
+}

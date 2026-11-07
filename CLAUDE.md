@@ -19,8 +19,9 @@ components. Lessons share a layout and step-through widgets.
 
 ## Scope
 
-The first lesson is Abstract Data Types: stacks. Don't start other topics until
-told what comes next.
+Lessons so far: stacks and linear queues (Abstract Data Types). Circular queues
+come next, starting from the linear queue's "Full but with free space" example.
+Don't start other topics until told what comes next.
 
 ## Working on lessons
 

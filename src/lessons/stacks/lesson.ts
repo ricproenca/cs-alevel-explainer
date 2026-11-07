@@ -1,3 +1,4 @@
+import { callWithItem, printResult } from "../../lib/explain";
 import {
   buildScenario,
   type Algorithm,
@@ -17,15 +18,7 @@ const columns: TraceColumn[] = [
   { key: "Removed", label: "Removed" },
 ];
 
-const pushCall: Explain = ({ step }) =>
-  `Calls \`Push\` and sends it "${step.vars.Item}". Python jumps up to the function, where the parameter \`Item\` now holds "${step.vars.Item}".`;
-
-const printResult =
-  (name: string, purpose: string, note = ""): Explain =>
-  ({ step }) =>
-    step.event === "return"
-      ? `\`${name}\` sent back ${step.output.at(-1)}, and \`print\` displays it.${note}`
-      : `Calls \`${name}\` to ${purpose}. Python jumps up to the function.`;
+const pushCall = callWithItem("Push");
 
 const sharedExplanations: Record<string, Explain> = {
   "StackSize = 3":

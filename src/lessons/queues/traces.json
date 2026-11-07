@@ -1,0 +1,6582 @@
+{
+  "tail-at-0/enqueue-and-dequeue": {
+    "source": [
+      "QueueSize = 3",
+      "Queue = [\"\"] * QueueSize",
+      "HeadPointer = 0",
+      "TailPointer = 0",
+      "NumberItems = 0",
+      "",
+      "",
+      "def Enqueue(Item):",
+      "    global TailPointer",
+      "    global NumberItems",
+      "    if TailPointer == QueueSize:",
+      "        print(\"Queue full\")",
+      "    else:",
+      "        Queue[TailPointer] = Item",
+      "        TailPointer = TailPointer + 1",
+      "        NumberItems = NumberItems + 1",
+      "",
+      "",
+      "def Dequeue():",
+      "    global HeadPointer",
+      "    global NumberItems",
+      "    if NumberItems == 0:",
+      "        print(\"Queue empty\")",
+      "        return \"\"",
+      "    else:",
+      "        Item = Queue[HeadPointer]",
+      "        HeadPointer = HeadPointer + 1",
+      "        NumberItems = NumberItems - 1",
+      "        return Item",
+      "",
+      "",
+      "def Peek():",
+      "    if NumberItems == 0:",
+      "        return \"\"",
+      "    else:",
+      "        return Queue[HeadPointer]",
+      "",
+      "",
+      "def IsEmpty():",
+      "    if NumberItems == 0:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "def IsFull():",
+      "    if TailPointer == QueueSize:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "# Main program",
+      "Enqueue(\"A\")",
+      "Enqueue(\"B\")",
+      "Removed = Dequeue()",
+      "print(Removed)",
+      "Enqueue(\"C\")"
+    ],
+    "steps": [
+      {
+        "line": 1,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3
+        },
+        "output": []
+      },
+      {
+        "line": 2,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "output": []
+      },
+      {
+        "line": 3,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 4,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 5,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 19,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 32,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 39,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 46,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 54,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 55,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 56,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2
+        },
+        "output": []
+      },
+      {
+        "line": 20,
+        "event": "global",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2
+        },
+        "output": []
+      },
+      {
+        "line": 21,
+        "event": "global",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2
+        },
+        "output": []
+      },
+      {
+        "line": 22,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2
+        },
+        "output": []
+      },
+      {
+        "line": 26,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 27,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 28,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 1,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 29,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 1,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 56,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 1,
+          "Removed": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 57,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 1,
+          "Removed": "A"
+        },
+        "output": [
+          "A"
+        ]
+      },
+      {
+        "line": 58,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 1,
+          "Removed": "A",
+          "Item": "C"
+        },
+        "output": [
+          "A"
+        ]
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 1,
+          "Removed": "A",
+          "Item": "C"
+        },
+        "output": [
+          "A"
+        ]
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 1,
+          "Removed": "A",
+          "Item": "C"
+        },
+        "output": [
+          "A"
+        ]
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 1,
+          "Removed": "A",
+          "Item": "C"
+        },
+        "output": [
+          "A"
+        ]
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 1,
+          "Removed": "A",
+          "Item": "C"
+        },
+        "output": [
+          "A"
+        ]
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 3,
+          "NumberItems": 1,
+          "Removed": "A",
+          "Item": "C"
+        },
+        "output": [
+          "A"
+        ]
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 3,
+          "NumberItems": 2,
+          "Removed": "A",
+          "Item": "C"
+        },
+        "output": [
+          "A"
+        ]
+      }
+    ]
+  },
+  "tail-at-0/full-with-free-space": {
+    "source": [
+      "QueueSize = 3",
+      "Queue = [\"\"] * QueueSize",
+      "HeadPointer = 0",
+      "TailPointer = 0",
+      "NumberItems = 0",
+      "",
+      "",
+      "def Enqueue(Item):",
+      "    global TailPointer",
+      "    global NumberItems",
+      "    if TailPointer == QueueSize:",
+      "        print(\"Queue full\")",
+      "    else:",
+      "        Queue[TailPointer] = Item",
+      "        TailPointer = TailPointer + 1",
+      "        NumberItems = NumberItems + 1",
+      "",
+      "",
+      "def Dequeue():",
+      "    global HeadPointer",
+      "    global NumberItems",
+      "    if NumberItems == 0:",
+      "        print(\"Queue empty\")",
+      "        return \"\"",
+      "    else:",
+      "        Item = Queue[HeadPointer]",
+      "        HeadPointer = HeadPointer + 1",
+      "        NumberItems = NumberItems - 1",
+      "        return Item",
+      "",
+      "",
+      "def Peek():",
+      "    if NumberItems == 0:",
+      "        return \"\"",
+      "    else:",
+      "        return Queue[HeadPointer]",
+      "",
+      "",
+      "def IsEmpty():",
+      "    if NumberItems == 0:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "def IsFull():",
+      "    if TailPointer == QueueSize:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "# Main program",
+      "Enqueue(\"A\")",
+      "Enqueue(\"B\")",
+      "Enqueue(\"C\")",
+      "Removed = Dequeue()",
+      "Enqueue(\"D\")"
+    ],
+    "steps": [
+      {
+        "line": 1,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3
+        },
+        "output": []
+      },
+      {
+        "line": 2,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "output": []
+      },
+      {
+        "line": 3,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 4,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 5,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 19,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 32,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 39,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 46,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 54,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 55,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 56,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 3,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 3,
+          "NumberItems": 3,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 57,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 3,
+          "NumberItems": 3
+        },
+        "output": []
+      },
+      {
+        "line": 20,
+        "event": "global",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 3,
+          "NumberItems": 3
+        },
+        "output": []
+      },
+      {
+        "line": 21,
+        "event": "global",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 3,
+          "NumberItems": 3
+        },
+        "output": []
+      },
+      {
+        "line": 22,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 3,
+          "NumberItems": 3
+        },
+        "output": []
+      },
+      {
+        "line": 26,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 3,
+          "NumberItems": 3,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 27,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 3,
+          "NumberItems": 3,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 28,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 3,
+          "NumberItems": 2,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 29,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 3,
+          "NumberItems": 2,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 57,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 3,
+          "NumberItems": 2,
+          "Removed": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 58,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 3,
+          "NumberItems": 2,
+          "Removed": "A",
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 3,
+          "NumberItems": 2,
+          "Removed": "A",
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 3,
+          "NumberItems": 2,
+          "Removed": "A",
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 3,
+          "NumberItems": 2,
+          "Removed": "A",
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 12,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 3,
+          "NumberItems": 2,
+          "Removed": "A",
+          "Item": "D"
+        },
+        "output": [
+          "Queue full"
+        ]
+      }
+    ]
+  },
+  "tail-at-0/peek-and-checks": {
+    "source": [
+      "QueueSize = 3",
+      "Queue = [\"\"] * QueueSize",
+      "HeadPointer = 0",
+      "TailPointer = 0",
+      "NumberItems = 0",
+      "",
+      "",
+      "def Enqueue(Item):",
+      "    global TailPointer",
+      "    global NumberItems",
+      "    if TailPointer == QueueSize:",
+      "        print(\"Queue full\")",
+      "    else:",
+      "        Queue[TailPointer] = Item",
+      "        TailPointer = TailPointer + 1",
+      "        NumberItems = NumberItems + 1",
+      "",
+      "",
+      "def Dequeue():",
+      "    global HeadPointer",
+      "    global NumberItems",
+      "    if NumberItems == 0:",
+      "        print(\"Queue empty\")",
+      "        return \"\"",
+      "    else:",
+      "        Item = Queue[HeadPointer]",
+      "        HeadPointer = HeadPointer + 1",
+      "        NumberItems = NumberItems - 1",
+      "        return Item",
+      "",
+      "",
+      "def Peek():",
+      "    if NumberItems == 0:",
+      "        return \"\"",
+      "    else:",
+      "        return Queue[HeadPointer]",
+      "",
+      "",
+      "def IsEmpty():",
+      "    if NumberItems == 0:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "def IsFull():",
+      "    if TailPointer == QueueSize:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "# Main program",
+      "print(IsEmpty())",
+      "Enqueue(\"A\")",
+      "print(Peek())",
+      "print(IsFull())"
+    ],
+    "steps": [
+      {
+        "line": 1,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3
+        },
+        "output": []
+      },
+      {
+        "line": 2,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "output": []
+      },
+      {
+        "line": 3,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 4,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 5,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 19,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 32,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 39,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 46,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 54,
+        "event": "line",
+        "scope": "IsEmpty",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 40,
+        "event": "line",
+        "scope": "IsEmpty",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 41,
+        "event": "line",
+        "scope": "IsEmpty",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 54,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 55,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 56,
+        "event": "line",
+        "scope": "Peek",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 33,
+        "event": "line",
+        "scope": "Peek",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 36,
+        "event": "line",
+        "scope": "Peek",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 56,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1
+        },
+        "output": [
+          "True",
+          "A"
+        ]
+      },
+      {
+        "line": 57,
+        "event": "line",
+        "scope": "IsFull",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1
+        },
+        "output": [
+          "True",
+          "A"
+        ]
+      },
+      {
+        "line": 47,
+        "event": "line",
+        "scope": "IsFull",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1
+        },
+        "output": [
+          "True",
+          "A"
+        ]
+      },
+      {
+        "line": 50,
+        "event": "line",
+        "scope": "IsFull",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1
+        },
+        "output": [
+          "True",
+          "A"
+        ]
+      },
+      {
+        "line": 57,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1
+        },
+        "output": [
+          "True",
+          "A",
+          "False"
+        ]
+      }
+    ]
+  },
+  "tail-at-0/queue-empty": {
+    "source": [
+      "QueueSize = 3",
+      "Queue = [\"\"] * QueueSize",
+      "HeadPointer = 0",
+      "TailPointer = 0",
+      "NumberItems = 0",
+      "",
+      "",
+      "def Enqueue(Item):",
+      "    global TailPointer",
+      "    global NumberItems",
+      "    if TailPointer == QueueSize:",
+      "        print(\"Queue full\")",
+      "    else:",
+      "        Queue[TailPointer] = Item",
+      "        TailPointer = TailPointer + 1",
+      "        NumberItems = NumberItems + 1",
+      "",
+      "",
+      "def Dequeue():",
+      "    global HeadPointer",
+      "    global NumberItems",
+      "    if NumberItems == 0:",
+      "        print(\"Queue empty\")",
+      "        return \"\"",
+      "    else:",
+      "        Item = Queue[HeadPointer]",
+      "        HeadPointer = HeadPointer + 1",
+      "        NumberItems = NumberItems - 1",
+      "        return Item",
+      "",
+      "",
+      "def Peek():",
+      "    if NumberItems == 0:",
+      "        return \"\"",
+      "    else:",
+      "        return Queue[HeadPointer]",
+      "",
+      "",
+      "def IsEmpty():",
+      "    if NumberItems == 0:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "def IsFull():",
+      "    if TailPointer == QueueSize:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "# Main program",
+      "Removed = Dequeue()",
+      "print(Removed)"
+    ],
+    "steps": [
+      {
+        "line": 1,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3
+        },
+        "output": []
+      },
+      {
+        "line": 2,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "output": []
+      },
+      {
+        "line": 3,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 4,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 5,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 19,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 32,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 39,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 46,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 54,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 20,
+        "event": "global",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 21,
+        "event": "global",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 22,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 23,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": [
+          "Queue empty"
+        ]
+      },
+      {
+        "line": 24,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": [
+          "Queue empty"
+        ]
+      },
+      {
+        "line": 54,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Removed": ""
+        },
+        "output": [
+          "Queue empty"
+        ]
+      },
+      {
+        "line": 55,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Removed": ""
+        },
+        "output": [
+          "Queue empty",
+          ""
+        ]
+      }
+    ]
+  },
+  "tail-at-0/queue-full": {
+    "source": [
+      "QueueSize = 3",
+      "Queue = [\"\"] * QueueSize",
+      "HeadPointer = 0",
+      "TailPointer = 0",
+      "NumberItems = 0",
+      "",
+      "",
+      "def Enqueue(Item):",
+      "    global TailPointer",
+      "    global NumberItems",
+      "    if TailPointer == QueueSize:",
+      "        print(\"Queue full\")",
+      "    else:",
+      "        Queue[TailPointer] = Item",
+      "        TailPointer = TailPointer + 1",
+      "        NumberItems = NumberItems + 1",
+      "",
+      "",
+      "def Dequeue():",
+      "    global HeadPointer",
+      "    global NumberItems",
+      "    if NumberItems == 0:",
+      "        print(\"Queue empty\")",
+      "        return \"\"",
+      "    else:",
+      "        Item = Queue[HeadPointer]",
+      "        HeadPointer = HeadPointer + 1",
+      "        NumberItems = NumberItems - 1",
+      "        return Item",
+      "",
+      "",
+      "def Peek():",
+      "    if NumberItems == 0:",
+      "        return \"\"",
+      "    else:",
+      "        return Queue[HeadPointer]",
+      "",
+      "",
+      "def IsEmpty():",
+      "    if NumberItems == 0:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "def IsFull():",
+      "    if TailPointer == QueueSize:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "# Main program",
+      "Enqueue(\"A\")",
+      "Enqueue(\"B\")",
+      "Enqueue(\"C\")",
+      "Enqueue(\"D\")"
+    ],
+    "steps": [
+      {
+        "line": 1,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3
+        },
+        "output": []
+      },
+      {
+        "line": 2,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "output": []
+      },
+      {
+        "line": 3,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 4,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 5,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 19,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 32,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 39,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 46,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 54,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 55,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 56,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 3,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 3,
+          "NumberItems": 3,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 57,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 3,
+          "NumberItems": 3,
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 3,
+          "NumberItems": 3,
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 3,
+          "NumberItems": 3,
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 3,
+          "NumberItems": 3,
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 12,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 3,
+          "NumberItems": 3,
+          "Item": "D"
+        },
+        "output": [
+          "Queue full"
+        ]
+      }
+    ]
+  },
+  "tail-at-minus-1/enqueue-and-dequeue": {
+    "source": [
+      "QueueSize = 3",
+      "Queue = [\"\"] * QueueSize",
+      "HeadPointer = 0",
+      "TailPointer = -1",
+      "NumberItems = 0",
+      "",
+      "",
+      "def Enqueue(Item):",
+      "    global TailPointer",
+      "    global NumberItems",
+      "    if TailPointer == QueueSize - 1:",
+      "        print(\"Queue full\")",
+      "    else:",
+      "        TailPointer = TailPointer + 1",
+      "        Queue[TailPointer] = Item",
+      "        NumberItems = NumberItems + 1",
+      "",
+      "",
+      "def Dequeue():",
+      "    global HeadPointer",
+      "    global NumberItems",
+      "    if NumberItems == 0:",
+      "        print(\"Queue empty\")",
+      "        return \"\"",
+      "    else:",
+      "        Item = Queue[HeadPointer]",
+      "        HeadPointer = HeadPointer + 1",
+      "        NumberItems = NumberItems - 1",
+      "        return Item",
+      "",
+      "",
+      "def Peek():",
+      "    if NumberItems == 0:",
+      "        return \"\"",
+      "    else:",
+      "        return Queue[HeadPointer]",
+      "",
+      "",
+      "def IsEmpty():",
+      "    if NumberItems == 0:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "def IsFull():",
+      "    if TailPointer == QueueSize - 1:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "# Main program",
+      "Enqueue(\"A\")",
+      "Enqueue(\"B\")",
+      "Removed = Dequeue()",
+      "print(Removed)",
+      "Enqueue(\"C\")"
+    ],
+    "steps": [
+      {
+        "line": 1,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3
+        },
+        "output": []
+      },
+      {
+        "line": 2,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "output": []
+      },
+      {
+        "line": 3,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 4,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 5,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 19,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 32,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 39,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 46,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 54,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 55,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 2,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 56,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 2
+        },
+        "output": []
+      },
+      {
+        "line": 20,
+        "event": "global",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 2
+        },
+        "output": []
+      },
+      {
+        "line": 21,
+        "event": "global",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 2
+        },
+        "output": []
+      },
+      {
+        "line": 22,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 2
+        },
+        "output": []
+      },
+      {
+        "line": 26,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 2,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 27,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 1,
+          "NumberItems": 2,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 28,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 29,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 56,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Removed": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 57,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Removed": "A"
+        },
+        "output": [
+          "A"
+        ]
+      },
+      {
+        "line": 58,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Removed": "A",
+          "Item": "C"
+        },
+        "output": [
+          "A"
+        ]
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Removed": "A",
+          "Item": "C"
+        },
+        "output": [
+          "A"
+        ]
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Removed": "A",
+          "Item": "C"
+        },
+        "output": [
+          "A"
+        ]
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Removed": "A",
+          "Item": "C"
+        },
+        "output": [
+          "A"
+        ]
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 1,
+          "Removed": "A",
+          "Item": "C"
+        },
+        "output": [
+          "A"
+        ]
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 1,
+          "Removed": "A",
+          "Item": "C"
+        },
+        "output": [
+          "A"
+        ]
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Removed": "A",
+          "Item": "C"
+        },
+        "output": [
+          "A"
+        ]
+      }
+    ]
+  },
+  "tail-at-minus-1/full-with-free-space": {
+    "source": [
+      "QueueSize = 3",
+      "Queue = [\"\"] * QueueSize",
+      "HeadPointer = 0",
+      "TailPointer = -1",
+      "NumberItems = 0",
+      "",
+      "",
+      "def Enqueue(Item):",
+      "    global TailPointer",
+      "    global NumberItems",
+      "    if TailPointer == QueueSize - 1:",
+      "        print(\"Queue full\")",
+      "    else:",
+      "        TailPointer = TailPointer + 1",
+      "        Queue[TailPointer] = Item",
+      "        NumberItems = NumberItems + 1",
+      "",
+      "",
+      "def Dequeue():",
+      "    global HeadPointer",
+      "    global NumberItems",
+      "    if NumberItems == 0:",
+      "        print(\"Queue empty\")",
+      "        return \"\"",
+      "    else:",
+      "        Item = Queue[HeadPointer]",
+      "        HeadPointer = HeadPointer + 1",
+      "        NumberItems = NumberItems - 1",
+      "        return Item",
+      "",
+      "",
+      "def Peek():",
+      "    if NumberItems == 0:",
+      "        return \"\"",
+      "    else:",
+      "        return Queue[HeadPointer]",
+      "",
+      "",
+      "def IsEmpty():",
+      "    if NumberItems == 0:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "def IsFull():",
+      "    if TailPointer == QueueSize - 1:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "# Main program",
+      "Enqueue(\"A\")",
+      "Enqueue(\"B\")",
+      "Enqueue(\"C\")",
+      "Removed = Dequeue()",
+      "Enqueue(\"D\")"
+    ],
+    "steps": [
+      {
+        "line": 1,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3
+        },
+        "output": []
+      },
+      {
+        "line": 2,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "output": []
+      },
+      {
+        "line": 3,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 4,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 5,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 19,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 32,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 39,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 46,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 54,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 55,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 2,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 56,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 3,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 57,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 3
+        },
+        "output": []
+      },
+      {
+        "line": 20,
+        "event": "global",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 3
+        },
+        "output": []
+      },
+      {
+        "line": 21,
+        "event": "global",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 3
+        },
+        "output": []
+      },
+      {
+        "line": 22,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 3
+        },
+        "output": []
+      },
+      {
+        "line": 26,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 3,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 27,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 3,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 28,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 29,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 57,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Removed": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 58,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Removed": "A",
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Removed": "A",
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Removed": "A",
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Removed": "A",
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 12,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 1,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Removed": "A",
+          "Item": "D"
+        },
+        "output": [
+          "Queue full"
+        ]
+      }
+    ]
+  },
+  "tail-at-minus-1/peek-and-checks": {
+    "source": [
+      "QueueSize = 3",
+      "Queue = [\"\"] * QueueSize",
+      "HeadPointer = 0",
+      "TailPointer = -1",
+      "NumberItems = 0",
+      "",
+      "",
+      "def Enqueue(Item):",
+      "    global TailPointer",
+      "    global NumberItems",
+      "    if TailPointer == QueueSize - 1:",
+      "        print(\"Queue full\")",
+      "    else:",
+      "        TailPointer = TailPointer + 1",
+      "        Queue[TailPointer] = Item",
+      "        NumberItems = NumberItems + 1",
+      "",
+      "",
+      "def Dequeue():",
+      "    global HeadPointer",
+      "    global NumberItems",
+      "    if NumberItems == 0:",
+      "        print(\"Queue empty\")",
+      "        return \"\"",
+      "    else:",
+      "        Item = Queue[HeadPointer]",
+      "        HeadPointer = HeadPointer + 1",
+      "        NumberItems = NumberItems - 1",
+      "        return Item",
+      "",
+      "",
+      "def Peek():",
+      "    if NumberItems == 0:",
+      "        return \"\"",
+      "    else:",
+      "        return Queue[HeadPointer]",
+      "",
+      "",
+      "def IsEmpty():",
+      "    if NumberItems == 0:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "def IsFull():",
+      "    if TailPointer == QueueSize - 1:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "# Main program",
+      "print(IsEmpty())",
+      "Enqueue(\"A\")",
+      "print(Peek())",
+      "print(IsFull())"
+    ],
+    "steps": [
+      {
+        "line": 1,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3
+        },
+        "output": []
+      },
+      {
+        "line": 2,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "output": []
+      },
+      {
+        "line": 3,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 4,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 5,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 19,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 32,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 39,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 46,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 54,
+        "event": "line",
+        "scope": "IsEmpty",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 40,
+        "event": "line",
+        "scope": "IsEmpty",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 41,
+        "event": "line",
+        "scope": "IsEmpty",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 54,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 55,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1,
+          "Item": "A"
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 56,
+        "event": "line",
+        "scope": "Peek",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 33,
+        "event": "line",
+        "scope": "Peek",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 36,
+        "event": "line",
+        "scope": "Peek",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1
+        },
+        "output": [
+          "True"
+        ]
+      },
+      {
+        "line": 56,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1
+        },
+        "output": [
+          "True",
+          "A"
+        ]
+      },
+      {
+        "line": 57,
+        "event": "line",
+        "scope": "IsFull",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1
+        },
+        "output": [
+          "True",
+          "A"
+        ]
+      },
+      {
+        "line": 47,
+        "event": "line",
+        "scope": "IsFull",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1
+        },
+        "output": [
+          "True",
+          "A"
+        ]
+      },
+      {
+        "line": 50,
+        "event": "line",
+        "scope": "IsFull",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1
+        },
+        "output": [
+          "True",
+          "A"
+        ]
+      },
+      {
+        "line": 57,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1
+        },
+        "output": [
+          "True",
+          "A",
+          "False"
+        ]
+      }
+    ]
+  },
+  "tail-at-minus-1/queue-empty": {
+    "source": [
+      "QueueSize = 3",
+      "Queue = [\"\"] * QueueSize",
+      "HeadPointer = 0",
+      "TailPointer = -1",
+      "NumberItems = 0",
+      "",
+      "",
+      "def Enqueue(Item):",
+      "    global TailPointer",
+      "    global NumberItems",
+      "    if TailPointer == QueueSize - 1:",
+      "        print(\"Queue full\")",
+      "    else:",
+      "        TailPointer = TailPointer + 1",
+      "        Queue[TailPointer] = Item",
+      "        NumberItems = NumberItems + 1",
+      "",
+      "",
+      "def Dequeue():",
+      "    global HeadPointer",
+      "    global NumberItems",
+      "    if NumberItems == 0:",
+      "        print(\"Queue empty\")",
+      "        return \"\"",
+      "    else:",
+      "        Item = Queue[HeadPointer]",
+      "        HeadPointer = HeadPointer + 1",
+      "        NumberItems = NumberItems - 1",
+      "        return Item",
+      "",
+      "",
+      "def Peek():",
+      "    if NumberItems == 0:",
+      "        return \"\"",
+      "    else:",
+      "        return Queue[HeadPointer]",
+      "",
+      "",
+      "def IsEmpty():",
+      "    if NumberItems == 0:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "def IsFull():",
+      "    if TailPointer == QueueSize - 1:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "# Main program",
+      "Removed = Dequeue()",
+      "print(Removed)"
+    ],
+    "steps": [
+      {
+        "line": 1,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3
+        },
+        "output": []
+      },
+      {
+        "line": 2,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "output": []
+      },
+      {
+        "line": 3,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 4,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 5,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 19,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 32,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 39,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 46,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 54,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 20,
+        "event": "global",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 21,
+        "event": "global",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 22,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 23,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": [
+          "Queue empty"
+        ]
+      },
+      {
+        "line": 24,
+        "event": "line",
+        "scope": "Dequeue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": [
+          "Queue empty"
+        ]
+      },
+      {
+        "line": 54,
+        "event": "return",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0,
+          "Removed": ""
+        },
+        "output": [
+          "Queue empty"
+        ]
+      },
+      {
+        "line": 55,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0,
+          "Removed": ""
+        },
+        "output": [
+          "Queue empty",
+          ""
+        ]
+      }
+    ]
+  },
+  "tail-at-minus-1/queue-full": {
+    "source": [
+      "QueueSize = 3",
+      "Queue = [\"\"] * QueueSize",
+      "HeadPointer = 0",
+      "TailPointer = -1",
+      "NumberItems = 0",
+      "",
+      "",
+      "def Enqueue(Item):",
+      "    global TailPointer",
+      "    global NumberItems",
+      "    if TailPointer == QueueSize - 1:",
+      "        print(\"Queue full\")",
+      "    else:",
+      "        TailPointer = TailPointer + 1",
+      "        Queue[TailPointer] = Item",
+      "        NumberItems = NumberItems + 1",
+      "",
+      "",
+      "def Dequeue():",
+      "    global HeadPointer",
+      "    global NumberItems",
+      "    if NumberItems == 0:",
+      "        print(\"Queue empty\")",
+      "        return \"\"",
+      "    else:",
+      "        Item = Queue[HeadPointer]",
+      "        HeadPointer = HeadPointer + 1",
+      "        NumberItems = NumberItems - 1",
+      "        return Item",
+      "",
+      "",
+      "def Peek():",
+      "    if NumberItems == 0:",
+      "        return \"\"",
+      "    else:",
+      "        return Queue[HeadPointer]",
+      "",
+      "",
+      "def IsEmpty():",
+      "    if NumberItems == 0:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "def IsFull():",
+      "    if TailPointer == QueueSize - 1:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "# Main program",
+      "Enqueue(\"A\")",
+      "Enqueue(\"B\")",
+      "Enqueue(\"C\")",
+      "Enqueue(\"D\")"
+    ],
+    "steps": [
+      {
+        "line": 1,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3
+        },
+        "output": []
+      },
+      {
+        "line": 2,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "output": []
+      },
+      {
+        "line": 3,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 4,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 5,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 19,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 32,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 39,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 46,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0
+        },
+        "output": []
+      },
+      {
+        "line": 54,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": -1,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 55,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 0,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 2,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 56,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 1,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 14,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            ""
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 15,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 16,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 3,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 57,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 3,
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 9,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 3,
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 10,
+        "event": "global",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 3,
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 3,
+          "Item": "D"
+        },
+        "output": []
+      },
+      {
+        "line": 12,
+        "event": "line",
+        "scope": "Enqueue",
+        "vars": {
+          "QueueSize": 3,
+          "Queue": [
+            "A",
+            "B",
+            "C"
+          ],
+          "HeadPointer": 0,
+          "TailPointer": 2,
+          "NumberItems": 3,
+          "Item": "D"
+        },
+        "output": [
+          "Queue full"
+        ]
+      }
+    ]
+  }
+}

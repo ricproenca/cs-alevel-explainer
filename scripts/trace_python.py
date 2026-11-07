@@ -3,7 +3,7 @@
 The step-through widget and trace table are built from the traces.json this
 writes, so what students see always matches what the code really does.
 
-Usage: python3 scripts/trace_python.py src/lessons/stacks
+Usage: python3 scripts/trace_python.py src/lessons/stacks [more lesson folders]
 """
 
 import contextlib
@@ -54,11 +54,12 @@ def trace_program(path):
             finish_pending(frame)
             # A global statement runs no code, so Python never reports it as a
             # line. It still gets a step because students need it explained.
-            def_index = frame.f_lineno - 1
-            if lines[def_index + 1].strip().startswith("global "):
+            line_index = frame.f_lineno
+            while lines[line_index].strip().startswith("global "):
                 steps.append(
-                    {"line": def_index + 2, "event": "global", **snapshot(frame, stdout)}
+                    {"line": line_index + 1, "event": "global", **snapshot(frame, stdout)}
                 )
+                line_index += 1
         elif event == "line":
             finish_pending(frame)
             pending = {"line": frame.f_lineno, "event": "line"}
@@ -84,15 +85,15 @@ def trace_program(path):
 
 
 def main():
-    lesson_dir = pathlib.Path(sys.argv[1])
-    traces = {
-        path.relative_to(lesson_dir).with_suffix("").as_posix(): trace_program(path.resolve())
-        for path in sorted(lesson_dir.rglob("*.py"))
-    }
-    out_path = lesson_dir / "traces.json"
-    out_path.write_text(json.dumps(traces, indent=2) + "\n")
-    for name, trace in traces.items():
-        print(f"{name}: {len(trace['steps'])} steps")
+    for lesson_dir in map(pathlib.Path, sys.argv[1:]):
+        traces = {
+            path.relative_to(lesson_dir).with_suffix("").as_posix(): trace_program(path.resolve())
+            for path in sorted(lesson_dir.rglob("*.py"))
+        }
+        out_path = lesson_dir / "traces.json"
+        out_path.write_text(json.dumps(traces, indent=2) + "\n")
+        for name, trace in traces.items():
+            print(f"{lesson_dir.name}/{name}: {len(trace['steps'])} steps")
 
 
 if __name__ == "__main__":

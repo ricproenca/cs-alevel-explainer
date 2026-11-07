@@ -3,14 +3,23 @@ import type { Algorithm } from "../lib/stepper";
 
 interface Props {
   algorithms: Algorithm[];
+  // Which drawing of the data structure to show.
+  visual: "stack" | "queue";
+  // Variables listed beside the drawing, e.g. ["StackSize", "Item"].
+  variables: string[];
 }
 
-const { algorithms } = Astro.props;
+const { algorithms, visual, variables } = Astro.props;
 const scenarios = algorithms[0].scenarios;
 const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
 ---
 
-<div class="stepper" data-stepper>
+<div
+  class="stepper"
+  data-stepper
+  data-visual={visual}
+  data-variables={JSON.stringify(variables)}
+>
   <script type="application/json" data-stepper-data set:html={data} />
 
   <p class="stepper__choice-label" id="stepper-algorithm-label">Algorithm</p>
@@ -85,17 +94,11 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
       </div>
 
       <div class="stepper__visual">
-        <div class="tower" data-tower>
-          <div class="tower__pointer" data-pointer>
-            <code data-pointer-label></code>
-          </div>
-          <ol class="tower__cells" data-cells></ol>
-          <p class="tower__floor">Bottom of stack</p>
-        </div>
+        <div class="stepper__drawing" data-drawing></div>
 
         <div class="readouts">
           <dl class="readouts__vars" data-vars></dl>
-          <p class="readouts__key" data-key hidden>Crossed out: still in the array, but no longer in the stack.</p>
+          <p class="readouts__key" data-key hidden></p>
           <div class="readouts__output">
             <h3>Output</h3>
             <pre data-output></pre>
@@ -118,7 +121,11 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
 
 <script>
   import { inlineCodeHtml } from "../lib/inline-code";
-  import type { Algorithm, FunctionRange, Scenario } from "../lib/stepper";
+  import type { Algorithm, FunctionRange, Scenario, ScenarioStep } from "../lib/stepper";
+  import { createQueueVisual } from "../lib/visuals/queue";
+  import { createStackVisual } from "../lib/visuals/stack";
+
+  const VISUALS = { stack: createStackVisual, queue: createQueueVisual };
 
   const STEP_DELAYS: Record<string, number> = { slow: 1800, normal: 1100, fast: 550 };
 
@@ -140,10 +147,10 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
     const play = find<HTMLButtonElement>("[data-play]");
     const speed = find<HTMLSelectElement>("[data-speed]");
     const range = find<HTMLInputElement>("[data-range]");
-    const tower = find("[data-tower]");
-    const pointer = find("[data-pointer]");
-    const pointerLabel = find("[data-pointer-label]");
-    const cells = find("[data-cells]");
+    const variables: string[] = JSON.parse(root.dataset.variables!);
+    const visual = VISUALS[root.dataset.visual as keyof typeof VISUALS](find("[data-drawing]"));
+    const key = find("[data-key]");
+    key.textContent = visual.leftoverKey;
     const traceWrap = find("[data-trace-wrap]");
     const traceBody = find("[data-trace-body]");
 
@@ -151,7 +158,6 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
     let scenarioIndex = 0;
     let scenario = algorithm.scenarios[0];
     let current = 0;
-    let lastStack: string[] = [];
     let lineFunctions: (FunctionRange | undefined)[] = [];
     let playTimer: number | undefined;
     let shouldUpdateUrl = false;
@@ -162,7 +168,6 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
       stopPlaying();
       scenario = algorithm.scenarios[scenarioIndex];
       current = Math.max(0, Math.min(lastStep(), startStep));
-      lastStack = [];
       algorithmTabs.forEach((tab, index) =>
         tab.setAttribute("aria-pressed", String(algorithms[index] === algorithm)),
       );
@@ -190,56 +195,17 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
           .map((column) => `<th scope="col"><code>${column}</code></th>`)
           .join("")}<th scope="col">Output</th></tr>`;
       range.max = String(lastStep());
-      const size = scenario.steps[lastStep()].vars.StackSize as number;
-      cells.innerHTML = Array.from(
-        { length: size },
-        (_, position) => `<li class="tower__cell" data-cell="${size - 1 - position}">
-            <span class="tower__index">${size - 1 - position}</span>
-            <code class="tower__value"></code>
-          </li>`,
-      ).join("");
+      visual.load(algorithm, scenario);
       render();
     }
 
-    function renderTower(stack: string[] | undefined, top: number | undefined, size: number) {
-      // A pointer that marks the next free space can sit one place above the array.
-      const hasSlotAbove = algorithm.itemsBelowPointer === 0;
-      const itemCount = top === undefined ? 0 : top + algorithm.itemsBelowPointer;
-      const previousStack = scenario.steps[current - 1]?.vars.Stack as string[] | undefined;
-      tower.classList.toggle("is-uncreated", stack === undefined);
-      tower.classList.toggle("has-slot-above", hasSlotAbove);
-      pointer.hidden = top === undefined;
-      if (top !== undefined) {
-        const rowsFromTop = hasSlotAbove ? size - top : size - 1 - top;
-        pointer.style.setProperty("--rows-from-top", String(rowsFromTop));
-        pointerLabel.textContent = `TopPointer = ${top}`;
-      }
-      cells.querySelectorAll<HTMLElement>("[data-cell]").forEach((cell) => {
-        const index = Number(cell.dataset.cell);
-        const value = stack?.[index] ?? "";
-        const changed = stack !== undefined && lastStack[index] !== undefined && lastStack[index] !== value;
-        cell.querySelector(".tower__value")!.textContent = value;
-        // An item just stored counts as in the stack, even before the pointer moves past it.
-        const justStored = top !== undefined && previousStack?.[index] !== value;
-        const inStack = value !== "" && (index < itemCount || justStored);
-        cell.classList.toggle("is-in-stack", inStack);
-        cell.classList.toggle("is-leftover", top !== undefined && value !== "" && !inStack);
-        cell.classList.toggle("is-changed", changed);
-      });
-      lastStack = stack ?? [];
-      find("[data-key]").hidden = !cells.querySelector(".is-leftover");
-    }
-
-    function renderVars(step: Scenario["steps"][number]) {
-      const rows: [string, string][] = [["StackSize", String(step.vars.StackSize ?? "")]];
-      if (step.vars.Item !== undefined) rows.push(["Item", String(step.vars.Item)]);
-      if (step.vars.Removed !== undefined) rows.push(["Removed", String(step.vars.Removed)]);
-      find("[data-vars]").innerHTML = rows
-        .filter(([name]) => step.vars[name] !== undefined)
-        .map(
-          ([name, value]) =>
-            `<div><dt><code>${name}</code></dt><dd><code>${value === "" ? '""' : value}</code></dd></div>`,
-        )
+    function renderVars(step: ScenarioStep) {
+      find("[data-vars]").innerHTML = variables
+        .filter((name) => step.vars[name] !== undefined)
+        .map((name) => {
+          const value = String(step.vars[name]);
+          return `<div><dt><code>${name}</code></dt><dd><code>${value === "" ? '""' : value}</code></dd></div>`;
+        })
         .join("");
     }
 
@@ -256,7 +222,7 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
       traceWrap.scrollTop = traceWrap.scrollHeight;
     }
 
-    function renderCode(step: Scenario["steps"][number]) {
+    function renderCode(step: ScenarioStep) {
       // Fade the functions that aren't running, except one being defined.
       const running = scenario.functions.find((fn) => fn.name === step.scope);
       codeLines.querySelectorAll<HTMLElement>(".code__line").forEach((line, index) => {
@@ -273,7 +239,7 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
       });
     }
 
-    function renderOperations(step: Scenario["steps"][number]) {
+    function renderOperations(step: ScenarioStep) {
       operationList.querySelectorAll<HTMLElement>("[data-operation]").forEach((button, index) => {
         const isCurrent = index === step.operation;
         if (isCurrent) {
@@ -297,7 +263,6 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
 
     function render() {
       const step = scenario.steps[current];
-      const size = scenario.steps[lastStep()].vars.StackSize as number;
 
       renderCode(step);
       renderOperations(step);
@@ -310,7 +275,7 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
       next.disabled = current === lastStep();
       skip.disabled = !scenario.steps[current + 1]?.inFunction;
 
-      renderTower(step.vars.Stack as string[] | undefined, step.vars.TopPointer as number | undefined, size);
+      key.hidden = !visual.render(step, scenario.steps[current - 1]);
       renderVars(step);
       find("[data-output]").textContent = step.output.join("\n") || " ";
       renderTrace();
@@ -828,6 +793,125 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
     background: var(--highlighter);
   }
 
+  .queue {
+    --queue-cell: 64px;
+    position: relative;
+    width: calc(var(--queue-slots) * var(--queue-cell));
+    margin-inline: 40px;
+    padding-block: 44px;
+  }
+
+  .queue.is-uncreated .queue__cells {
+    opacity: 0.35;
+  }
+
+  .queue__cells {
+    display: flex;
+    margin: 0 0 0 var(--queue-cell);
+    padding: 0;
+    list-style: none;
+    border: 2px solid var(--ink);
+    border-left: 0;
+    width: fit-content;
+  }
+
+  .queue__cell {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--queue-cell);
+    height: var(--queue-cell);
+    border-left: 2px solid var(--ink);
+  }
+
+  .queue__index {
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    color: var(--muted);
+    font-size: 0.8125rem;
+  }
+
+  .queue__value {
+    font-size: 1.375rem;
+    font-weight: 700;
+  }
+
+  .queue__cell.is-in-queue {
+    background: var(--ink);
+  }
+
+  .queue__cell.is-in-queue + .queue__cell.is-in-queue {
+    border-left-color: var(--sheet);
+  }
+
+  .queue__cell.is-in-queue .queue__value,
+  .queue__cell.is-in-queue .queue__index {
+    color: var(--sheet);
+  }
+
+  .queue__cell.is-leftover {
+    background: repeating-linear-gradient(135deg, var(--sheet) 0 6px, var(--paper) 6px 12px);
+  }
+
+  .queue__cell.is-leftover .queue__value {
+    color: var(--muted);
+    text-decoration: line-through;
+  }
+
+  .queue__cell.is-changed {
+    animation: cell-stored 420ms ease-out;
+  }
+
+  .queue__pointer {
+    position: absolute;
+    left: calc((var(--slot, 0) + 1.5) * var(--queue-cell));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 700;
+    white-space: nowrap;
+    transform: translateX(-50%);
+    transition: left 280ms cubic-bezier(0.3, 0.9, 0.3, 1);
+  }
+
+  .queue__pointer[hidden] {
+    display: none;
+  }
+
+  .queue__pointer code {
+    font-size: 0.8125rem;
+  }
+
+  .queue__pointer::after {
+    width: 0;
+    height: 0;
+    border-inline: 9px solid transparent;
+    content: "";
+  }
+
+  .queue__pointer--tail {
+    top: 0;
+    color: var(--pointer);
+  }
+
+  .queue__pointer--tail::after {
+    margin-top: 4px;
+    border-top: 14px solid var(--pointer);
+  }
+
+  .queue__pointer--head {
+    bottom: 0;
+    flex-direction: column-reverse;
+    color: var(--examiner);
+  }
+
+  .queue__pointer--head::after {
+    margin-bottom: 4px;
+    border-bottom: 14px solid var(--examiner);
+  }
+
   .stepper__playback {
     margin-top: 10px;
   }
@@ -1003,6 +1087,15 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
 
     .tower__pointer {
       width: 146px;
+    }
+
+    .queue {
+      --queue-cell: 48px;
+      margin-inline: 34px;
+    }
+
+    .queue__pointer code {
+      font-size: 0.75rem;
     }
   }
 </style>

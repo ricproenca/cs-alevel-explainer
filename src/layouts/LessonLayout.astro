@@ -88,6 +88,44 @@ const { title, description } = Astro.props;
     max-width: 68ch;
   }
 
+  .crumb {
+    margin: 0 0 8px;
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  .lesson-title {
+    margin: 0;
+    font-size: clamp(3.5rem, 10vw, 6.5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .lesson-lead {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .lesson-intro p {
+    margin-block: 16px;
+  }
+
+  .lesson-section {
+    margin-top: 48px;
+  }
+
+  .lesson-section h2 {
+    margin: 0 0 8px;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .lesson-section > .prose {
+    margin: 0 0 16px;
+  }
+
   @media (max-width: 600px) {
     .page {
       padding: 20px 16px 48px;

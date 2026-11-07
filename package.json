@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "trace": "python3 scripts/trace_python.py src/lessons/stacks",
+    "trace": "python3 scripts/trace_python.py src/lessons/stacks src/lessons/queues",
     "test": "playwright test"
   },
   "dependencies": {

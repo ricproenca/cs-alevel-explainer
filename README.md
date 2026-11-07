@@ -11,6 +11,9 @@ table that fills in as you go.
 
 - [Stacks](https://ricproenca.github.io/cs-alevel-explainer/lessons/stacks): push,
   pop, peek, `IsEmpty` and `IsFull`, with `TopPointer` starting at -1 or at 0.
+- [Linear queues](https://ricproenca.github.io/cs-alevel-explainer/lessons/queues):
+  enqueue, dequeue, peek, `IsEmpty` and `IsFull`, with `TailPointer` starting at
+  -1 or at 0, and why a linear queue can fill up while space is free.
 
 ## Running it locally
 

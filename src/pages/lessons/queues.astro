@@ -1,0 +1,38 @@
+---
+import CodeStepper from "../../components/CodeStepper.astro";
+import LessonLayout from "../../layouts/LessonLayout.astro";
+import { algorithms, variables } from "../../lessons/queues/lesson";
+import { pageUrl } from "../../lib/links";
+---
+
+<LessonLayout
+  title="Linear queues | A Level Computer Science"
+  description="Learn how a linear queue works in Python, one line at a time, for Cambridge International A Level Computer Science (9618)."
+>
+  <main class="page">
+    <p class="crumb"><a href={pageUrl()}>Cambridge A Level Computer Science (9618)</a> / Abstract data types</p>
+    <h1 class="lesson-title">Linear queues</h1>
+    <div class="prose lesson-intro">
+      <p class="lesson-lead">The first item added to a queue is the first one removed.</p>
+      <p>
+        Think of people waiting at a bus stop: new people join at the back, and the person at the front gets on first.
+        This rule is called first in, first out (FIFO). <strong>Enqueue</strong> adds an item to the back, and <strong>Dequeue</strong> removes the item at the front. <strong>Peek</strong> looks at the front item without removing it, and <strong>IsEmpty</strong> and <strong>IsFull</strong> answer <code>True</code> or <code>False</code>.
+      </p>
+      <p>
+        In Python, you can build a queue from a fixed-size array and two pointers. <code>HeadPointer</code> holds the index of the front item, and <code>TailPointer</code> marks the back. <code>NumberItems</code> counts how many items are in the queue.
+        Exam papers may use other names, such as <code>FrontPointer</code> and <code>RearPointer</code>, so check what each pointer points at.
+      </p>
+      <p>
+        In a linear queue, both pointers only move forwards. The last example shows the problem this causes.
+      </p>
+    </div>
+
+    <section class="lesson-section">
+      <h2>Watch the code run</h2>
+      <p class="prose">
+        Select <strong>Next line</strong> to run the code one line at a time. The yellow line has just run. The pink arrow shows <code>TailPointer</code>, and the green arrow shows <code>HeadPointer</code>.
+      </p>
+      <CodeStepper algorithms={algorithms} visual="queue" variables={variables} />
+    </section>
+  </main>
+</LessonLayout>

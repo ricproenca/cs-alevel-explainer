@@ -160,13 +160,14 @@ export function buildScenario(
 }
 
 export type Scenario = ReturnType<typeof buildScenario>;
+export type ScenarioStep = Scenario["steps"][number];
 
 export interface Algorithm {
   id: string;
   label: string;
   description: string;
-  // How many items sit at or below index TopPointer: 1 if it marks the top
-  // item, 0 if it marks the next free space.
-  itemsBelowPointer: number;
+  // Stacks only. How many items sit at or below index TopPointer: 1 if it
+  // marks the top item, 0 if it marks the next free space.
+  itemsBelowPointer?: number;
   scenarios: Scenario[];
 }
