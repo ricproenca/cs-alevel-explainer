@@ -1,6 +1,7 @@
 ---
 import CodeStepper from "../../components/CodeStepper.astro";
 import LessonLayout from "../../layouts/LessonLayout.astro";
+import { pageUrl } from "../../lib/links";
 import { algorithms } from "../../lessons/stacks/lesson";
 ---
 
@@ -9,7 +10,7 @@ import { algorithms } from "../../lessons/stacks/lesson";
   description="Learn how a stack works in Python, one line at a time, for Cambridge International A Level Computer Science (9618)."
 >
   <main class="page">
-    <p class="crumb"><a href="/">Cambridge A Level Computer Science (9618)</a> / Abstract data types</p>
+    <p class="crumb"><a href={pageUrl()}>Cambridge A Level Computer Science (9618)</a> / Abstract data types</p>
     <h1 class="lesson-title">Stacks</h1>
     <div class="prose lesson-intro">
       <p class="lesson-lead">The last item added to a stack is the first one removed.</p>

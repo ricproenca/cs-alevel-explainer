@@ -6,7 +6,7 @@ import {
   type Trace,
   type TraceColumn,
 } from "../../lib/stepper";
-import traces from "./traces.json";
+import traces from "./traces.json" with { type: "json" };
 
 const columns: TraceColumn[] = [
   { key: "TopPointer", label: "TopPointer" },
@@ -32,8 +32,6 @@ const sharedExplanations: Record<string, Explain> = {
     "Sets how many items the stack can hold. The array has a fixed size, so this stack can never hold more than 3 items.",
   'Stack = [""] * StackSize':
     "Creates the array with 3 spaces, at indexes 0, 1 and 2. Each space starts with an empty string.",
-  'Stack = ["A", "B", "C"]':
-    "This example starts with an array that is already full, so every space holds an item.",
   "def Push(Item):":
     "Defines the `Push` function. Python remembers these instructions, but doesn't run them until the function is called.",
   "def Pop():":
@@ -124,8 +122,6 @@ const startAtMinusOne: Record<string, Explain> = {
   ...sharedExplanations,
   "TopPointer = -1":
     "`TopPointer` stores the index of the top item. There is no index -1, so -1 means the stack is empty.",
-  "TopPointer = 2":
-    "`TopPointer` is 2 because the top item, C, is at index 2. That is the last space in the array.",
   "if TopPointer == StackSize - 1:": fullCheck("StackSize - 1", (size) => size - 1),
   'print("Stack full")': stackFullMessage(1),
   "TopPointer = TopPointer + 1": ({ step, previous }) =>
@@ -153,8 +149,6 @@ const startAtZero: Record<string, Explain> = {
   ...sharedExplanations,
   "TopPointer = 0":
     "`TopPointer` stores the index of the next free space. Index 0 is free, so 0 means the stack is empty.",
-  "TopPointer = 3":
-    "`TopPointer` is 3 because the next free space would be index 3. The array stops at index 2, so 3 means the stack is full.",
   "if TopPointer == StackSize:": fullCheck("StackSize", (size) => size),
   'print("Stack full")': stackFullMessage(0),
   "Stack[TopPointer] = Item": (context) => {
@@ -198,8 +192,8 @@ const scenarioConfigs: ScenarioConfig[] = [
   {
     id: "stack-full",
     label: "When the stack is full",
-    summary: "Tries to add an item when there is no space left.",
-    ending: "The program has finished, and the stack is unchanged.",
+    summary: "Fills the stack, then tries to add one more item.",
+    ending: "The program has finished. The stack is still full, holding A, B and C.",
   },
   {
     id: "stack-empty",

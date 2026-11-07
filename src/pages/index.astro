@@ -1,5 +1,6 @@
 ---
 import LessonLayout from "../layouts/LessonLayout.astro";
+import { pageUrl } from "../lib/links";
 ---
 
 <LessonLayout
@@ -11,7 +12,7 @@ import LessonLayout from "../layouts/LessonLayout.astro";
     <p class="prose">Interactive lessons that run the code one line at a time.</p>
     <h2>Abstract data types</h2>
     <ul>
-      <li><a href="/lessons/stacks">Stacks</a></li>
+      <li><a href={pageUrl("lessons/stacks")}>Stacks</a></li>
     </ul>
   </main>
 </LessonLayout>

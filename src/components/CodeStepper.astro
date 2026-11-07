@@ -47,6 +47,9 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
   </div>
   <p class="stepper__summary" data-summary></p>
 
+  <p class="stepper__choice-label" id="stepper-operations-label">Main program</p>
+  <ol class="ops" data-operations aria-labelledby="stepper-operations-label"></ol>
+
   <div class="stepper__grid">
     <div class="stepper__code" data-code tabindex="0" role="region" aria-label="Python code">
       <ol class="code" data-code-lines></ol>
@@ -56,14 +59,29 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
       <div class="stepper__explain">
         <p class="stepper__running" data-running></p>
         <p class="stepper__text" data-text aria-live="polite"></p>
+        <div class="stepper__buttons">
         <div class="stepper__controls">
           <button type="button" class="button" data-back>Back</button>
           <button type="button" class="button button--primary" data-next>Next line</button>
+          <button type="button" class="button" data-skip>Skip function</button>
+        </div>
+        <div class="stepper__controls stepper__playback">
+          <button type="button" class="button" data-play aria-pressed="false">Play</button>
+          <label class="stepper__speed">
+            Speed
+            <select data-speed>
+              <option value="slow">Slow</option>
+              <option value="normal" selected>Normal</option>
+              <option value="fast">Fast</option>
+            </select>
+          </label>
           <label class="stepper__scrub">
             <span data-count></span>
-            <input type="range" min="0" value="0" step="1" data-range />
+            <input type="range" min="0" value="0" step="1" data-range aria-label="Step" />
           </label>
         </div>
+        </div>
+        <p class="stepper__hint">Tip: press the left and right arrow keys to step.</p>
       </div>
 
       <div class="stepper__visual">
@@ -100,7 +118,9 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
 
 <script>
   import { inlineCodeHtml } from "../lib/inline-code";
-  import type { Algorithm, Scenario } from "../lib/stepper";
+  import type { Algorithm, FunctionRange, Scenario } from "../lib/stepper";
+
+  const STEP_DELAYS: Record<string, number> = { slow: 1800, normal: 1100, fast: 550 };
 
   function setUpStepper(root: HTMLElement) {
     const algorithms: Algorithm[] = JSON.parse(
@@ -111,10 +131,14 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
 
     const algorithmTabs = root.querySelectorAll<HTMLButtonElement>("[data-algorithm]");
     const tabs = root.querySelectorAll<HTMLButtonElement>("[data-scenario]");
+    const operationList = find("[data-operations]");
     const codePanel = find("[data-code]");
     const codeLines = find("[data-code-lines]");
     const back = find<HTMLButtonElement>("[data-back]");
     const next = find<HTMLButtonElement>("[data-next]");
+    const skip = find<HTMLButtonElement>("[data-skip]");
+    const play = find<HTMLButtonElement>("[data-play]");
+    const speed = find<HTMLSelectElement>("[data-speed]");
     const range = find<HTMLInputElement>("[data-range]");
     const tower = find("[data-tower]");
     const pointer = find("[data-pointer]");
@@ -128,10 +152,16 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
     let scenario = algorithm.scenarios[0];
     let current = 0;
     let lastStack: string[] = [];
+    let lineFunctions: (FunctionRange | undefined)[] = [];
+    let playTimer: number | undefined;
+    let shouldUpdateUrl = false;
 
-    function loadScenario() {
+    const lastStep = () => scenario.steps.length - 1;
+
+    function loadScenario(startStep = 0) {
+      stopPlaying();
       scenario = algorithm.scenarios[scenarioIndex];
-      current = 0;
+      current = Math.max(0, Math.min(lastStep(), startStep));
       lastStack = [];
       algorithmTabs.forEach((tab, index) =>
         tab.setAttribute("aria-pressed", String(algorithms[index] === algorithm)),
@@ -141,15 +171,26 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
       );
       find("[data-algorithm-note]").innerHTML = inlineCodeHtml(algorithm.description);
       find("[data-summary]").textContent = scenario.summary;
+      operationList.innerHTML = scenario.operations
+        .map(
+          (operation, index) =>
+            `<li><button type="button" class="ops__button" data-operation="${index}">${
+              operation.isCode ? `<code>${inlineCodeHtml(operation.label)}</code>` : operation.label
+            }</button></li>`,
+        )
+        .join("");
       codeLines.innerHTML = scenario.lines
         .map((line) => `<li class="code__line"><code>${line || " "}</code></li>`)
         .join("");
+      lineFunctions = scenario.lines.map((_, index) =>
+        scenario.functions.find((fn) => index + 1 >= fn.start && index + 1 <= fn.end),
+      );
       find("[data-trace-head]").innerHTML =
         `<tr><th scope="col">Line</th>${scenario.columns
           .map((column) => `<th scope="col"><code>${column}</code></th>`)
           .join("")}<th scope="col">Output</th></tr>`;
-      range.max = String(scenario.steps.length - 1);
-      const size = scenario.steps[scenario.steps.length - 1].vars.StackSize as number;
+      range.max = String(lastStep());
+      const size = scenario.steps[lastStep()].vars.StackSize as number;
       cells.innerHTML = Array.from(
         { length: size },
         (_, position) => `<li class="tower__cell" data-cell="${size - 1 - position}">
@@ -207,7 +248,7 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
       traceBody.innerHTML = visible
         .map(
           (row) =>
-            `<tr class="${row.step === current ? "is-current" : ""}"><td>${row.line}</td>${row.cells
+            `<tr class="${row.step === current ? "is-current" : ""}"><td><button type="button" class="trace__jump" data-step="${row.step}" aria-label="Go to step ${row.step + 1}, line ${row.line}">${row.line}</button></td>${row.cells
               .map((cell) => `<td><code>${cell}</code></td>`)
               .join("")}<td>${row.output}</td></tr>`,
         )
@@ -215,35 +256,109 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
       traceWrap.scrollTop = traceWrap.scrollHeight;
     }
 
-    function render() {
-      const step = scenario.steps[current];
-      const size = scenario.steps[scenario.steps.length - 1].vars.StackSize as number;
-
+    function renderCode(step: Scenario["steps"][number]) {
+      // Fade the functions that aren't running, except one being defined.
+      const running = scenario.functions.find((fn) => fn.name === step.scope);
       codeLines.querySelectorAll<HTMLElement>(".code__line").forEach((line, index) => {
         const isCurrent = index === step.line - 1;
+        const fn = lineFunctions[index];
         line.classList.toggle("is-current", isCurrent);
+        line.classList.toggle(
+          "is-dimmed",
+          fn !== undefined && fn !== running && fn.start !== step.line,
+        );
         if (isCurrent) {
           codePanel.scrollTop = line.offsetTop - codePanel.clientHeight / 2 + line.offsetHeight / 2;
         }
       });
+    }
 
+    function renderOperations(step: Scenario["steps"][number]) {
+      operationList.querySelectorAll<HTMLElement>("[data-operation]").forEach((button, index) => {
+        const isCurrent = index === step.operation;
+        if (isCurrent) {
+          button.setAttribute("aria-current", "step");
+          operationList.scrollLeft =
+            button.offsetLeft - operationList.clientWidth / 2 + button.offsetWidth / 2;
+        } else {
+          button.removeAttribute("aria-current");
+        }
+      });
+    }
+
+    function writeUrl() {
+      if (!shouldUpdateUrl) return;
+      const url = new URL(window.location.href);
+      url.searchParams.set("algorithm", algorithm.id);
+      url.searchParams.set("example", scenario.id);
+      url.searchParams.set("step", String(current + 1));
+      window.history.replaceState(null, "", url);
+    }
+
+    function render() {
+      const step = scenario.steps[current];
+      const size = scenario.steps[lastStep()].vars.StackSize as number;
+
+      renderCode(step);
+      renderOperations(step);
       find("[data-running]").textContent =
         step.scope === "<module>" ? "Running the main program" : `Running inside ${step.scope}`;
       find("[data-text]").innerHTML = inlineCodeHtml(step.text);
       find("[data-count]").textContent = `Step ${current + 1} of ${scenario.steps.length}`;
       range.value = String(current);
       back.disabled = current === 0;
-      next.disabled = current === scenario.steps.length - 1;
+      next.disabled = current === lastStep();
+      skip.disabled = !scenario.steps[current + 1]?.inFunction;
 
       renderTower(step.vars.Stack as string[] | undefined, step.vars.TopPointer as number | undefined, size);
       renderVars(step);
       find("[data-output]").textContent = step.output.join("\n") || " ";
       renderTrace();
+      writeUrl();
+    }
+
+    function show(index: number) {
+      current = Math.max(0, Math.min(lastStep(), index));
+      render();
     }
 
     function goTo(index: number) {
-      current = Math.max(0, Math.min(scenario.steps.length - 1, index));
-      render();
+      stopPlaying();
+      show(index);
+    }
+
+    // Runs the rest of the current function call and stops back in the main program.
+    function skipFunction() {
+      const target = scenario.steps.findIndex(
+        (step, index) => index > current && !step.inFunction,
+      );
+      goTo(target === -1 ? lastStep() : target);
+    }
+
+    function stopPlaying() {
+      window.clearInterval(playTimer);
+      playTimer = undefined;
+      play.textContent = "Play";
+      play.setAttribute("aria-pressed", "false");
+    }
+
+    function startPlaying() {
+      if (current === lastStep()) show(0);
+      play.textContent = "Pause";
+      play.setAttribute("aria-pressed", "true");
+      playTimer = window.setInterval(() => {
+        show(current + 1);
+        if (current === lastStep()) stopPlaying();
+      }, STEP_DELAYS[speed.value]);
+    }
+
+    function readUrl() {
+      const params = new URLSearchParams(window.location.search);
+      algorithm = algorithms.find((item) => item.id === params.get("algorithm")) ?? algorithm;
+      const exampleIndex = algorithm.scenarios.findIndex((item) => item.id === params.get("example"));
+      if (exampleIndex !== -1) scenarioIndex = exampleIndex;
+      const step = Number(params.get("step"));
+      return Number.isInteger(step) && step >= 1 ? step - 1 : 0;
     }
 
     algorithmTabs.forEach((tab) =>
@@ -258,11 +373,45 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
         loadScenario();
       }),
     );
+    operationList.addEventListener("click", (event) => {
+      const button = (event.target as HTMLElement).closest<HTMLElement>("[data-operation]");
+      if (button) goTo(scenario.operations[Number(button.dataset.operation)].step);
+    });
+    traceBody.addEventListener("click", (event) => {
+      const button = (event.target as HTMLElement).closest<HTMLElement>("[data-step]");
+      if (button) goTo(Number(button.dataset.step));
+    });
     back.addEventListener("click", () => goTo(current - 1));
     next.addEventListener("click", () => goTo(current + 1));
+    skip.addEventListener("click", skipFunction);
+    play.addEventListener("click", () => (playTimer === undefined ? startPlaying() : stopPlaying()));
+    speed.addEventListener("change", () => {
+      if (playTimer === undefined) return;
+      stopPlaying();
+      startPlaying();
+    });
     range.addEventListener("input", () => goTo(Number(range.value)));
 
-    loadScenario();
+    document.addEventListener("keydown", (event) => {
+      if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+      if ((event.target as HTMLElement).closest("input, select, textarea, [contenteditable]")) return;
+      const actions: Record<string, () => void> = {
+        ArrowRight: () => goTo(current + 1),
+        ArrowLeft: () => goTo(current - 1),
+      };
+      // Home and End only belong to the stepper while focus is inside it.
+      if (root.contains(document.activeElement)) {
+        actions.Home = () => goTo(0);
+        actions.End = () => goTo(lastStep());
+      }
+      const action = actions[event.key];
+      if (!action) return;
+      event.preventDefault();
+      action();
+    });
+
+    loadScenario(readUrl());
+    shouldUpdateUrl = true;
   }
 
   document.querySelectorAll<HTMLElement>("[data-stepper]").forEach(setUpStepper);
@@ -338,6 +487,7 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
     font-size: 0.875rem;
     line-height: 1.6;
     white-space: pre;
+    transition: opacity 200ms ease;
   }
 
   .code__line::before {
@@ -348,6 +498,10 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
     font-family: var(--code-font);
     text-align: right;
     content: counter(code-line);
+  }
+
+  .code__line.is-dimmed {
+    opacity: 0.45;
   }
 
   .code__line.is-current code {
@@ -674,6 +828,76 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
     background: var(--highlighter);
   }
 
+  .stepper__playback {
+    margin-top: 10px;
+  }
+
+  .stepper__speed {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  .stepper__speed select {
+    padding: 6px 8px;
+    background: var(--sheet);
+    border: 2px solid var(--ink);
+    border-radius: 6px;
+  }
+
+  .stepper__hint {
+    margin: 10px 0 0;
+    color: var(--muted);
+    font-size: 0.875rem;
+  }
+
+  @media (hover: none) {
+    .stepper__hint {
+      display: none;
+    }
+  }
+
+  .ops {
+    position: relative;
+    display: flex;
+    gap: 6px;
+    margin: 0 0 16px;
+    padding: 2px 2px 6px;
+    overflow-x: auto;
+    list-style: none;
+  }
+
+  .ops li {
+    flex: none;
+  }
+
+  .ops__button {
+    padding: 4px 10px;
+    font-size: 0.9375rem;
+    background: var(--sheet);
+    border: 2px solid var(--ink);
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .ops__button[aria-current="step"] {
+    font-weight: 700;
+    background: var(--highlighter);
+  }
+
+  .trace__jump {
+    width: 100%;
+    padding: 2px 4px;
+    color: inherit;
+    text-decoration: underline dotted;
+    text-underline-offset: 3px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+
   @media (max-width: 1020px) {
     .stepper__grid {
       grid-template-columns: minmax(0, 1fr);
@@ -725,12 +949,33 @@ const data = JSON.stringify(algorithms).replace(/</g, "\\u003c");
     }
 
     .stepper__running,
-    .stepper__scrub input {
+    .stepper__scrub input,
+    .stepper__speed,
+    .stepper__hint {
       display: none;
     }
 
+    .stepper__buttons {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .stepper__buttons .stepper__controls {
+      display: contents;
+    }
+
+    .stepper__explain .button {
+      padding: 7px 10px;
+    }
+
+    .stepper__scrub {
+      font-size: 0.875rem;
+    }
+
     .stepper__text {
-      min-height: 7.75em;
+      min-height: 5.6em;
       margin-top: 0;
       margin-bottom: 8px;
       font-size: 0.9375rem;

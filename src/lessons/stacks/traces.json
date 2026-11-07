@@ -15,6 +15,17 @@
       "        TopPointer = TopPointer + 1",
       "",
       "",
+      "def Pop():",
+      "    global TopPointer",
+      "    if TopPointer == 0:",
+      "        print(\"Stack empty\")",
+      "        return \"\"",
+      "    else:",
+      "        TopPointer = TopPointer - 1",
+      "        Item = Stack[TopPointer]",
+      "        return Item",
+      "",
+      "",
       "def Peek():",
       "    if TopPointer == 0:",
       "        return \"\"",
@@ -112,7 +123,7 @@
         "output": []
       },
       {
-        "line": 22,
+        "line": 26,
         "event": "line",
         "scope": "<module>",
         "vars": {
@@ -127,7 +138,7 @@
         "output": []
       },
       {
-        "line": 29,
+        "line": 33,
         "event": "line",
         "scope": "<module>",
         "vars": {
@@ -142,7 +153,22 @@
         "output": []
       },
       {
-        "line": 37,
+        "line": 40,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 48,
         "event": "line",
         "scope": "IsEmpty",
         "vars": {
@@ -157,7 +183,7 @@
         "output": []
       },
       {
-        "line": 23,
+        "line": 34,
         "event": "line",
         "scope": "IsEmpty",
         "vars": {
@@ -172,7 +198,7 @@
         "output": []
       },
       {
-        "line": 24,
+        "line": 35,
         "event": "line",
         "scope": "IsEmpty",
         "vars": {
@@ -187,7 +213,7 @@
         "output": []
       },
       {
-        "line": 37,
+        "line": 48,
         "event": "return",
         "scope": "<module>",
         "vars": {
@@ -204,7 +230,7 @@
         ]
       },
       {
-        "line": 38,
+        "line": 49,
         "event": "line",
         "scope": "Push",
         "vars": {
@@ -294,7 +320,7 @@
         ]
       },
       {
-        "line": 39,
+        "line": 50,
         "event": "line",
         "scope": "Peek",
         "vars": {
@@ -311,7 +337,7 @@
         ]
       },
       {
-        "line": 16,
+        "line": 27,
         "event": "line",
         "scope": "Peek",
         "vars": {
@@ -328,7 +354,7 @@
         ]
       },
       {
-        "line": 19,
+        "line": 30,
         "event": "line",
         "scope": "Peek",
         "vars": {
@@ -345,7 +371,7 @@
         ]
       },
       {
-        "line": 39,
+        "line": 50,
         "event": "return",
         "scope": "<module>",
         "vars": {
@@ -363,7 +389,7 @@
         ]
       },
       {
-        "line": 40,
+        "line": 51,
         "event": "line",
         "scope": "IsFull",
         "vars": {
@@ -381,7 +407,7 @@
         ]
       },
       {
-        "line": 30,
+        "line": 41,
         "event": "line",
         "scope": "IsFull",
         "vars": {
@@ -399,7 +425,7 @@
         ]
       },
       {
-        "line": 33,
+        "line": 44,
         "event": "line",
         "scope": "IsFull",
         "vars": {
@@ -417,7 +443,7 @@
         ]
       },
       {
-        "line": 40,
+        "line": 51,
         "event": "return",
         "scope": "<module>",
         "vars": {
@@ -462,6 +488,27 @@
       "        TopPointer = TopPointer - 1",
       "        Item = Stack[TopPointer]",
       "        return Item",
+      "",
+      "",
+      "def Peek():",
+      "    if TopPointer == 0:",
+      "        return \"\"",
+      "    else:",
+      "        return Stack[TopPointer - 1]",
+      "",
+      "",
+      "def IsEmpty():",
+      "    if TopPointer == 0:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "def IsFull():",
+      "    if TopPointer == StackSize:",
+      "        return True",
+      "    else:",
+      "        return False",
       "",
       "",
       "# Main program",
@@ -541,7 +588,52 @@
         "output": []
       },
       {
-        "line": 27,
+        "line": 26,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 33,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 40,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 48,
         "event": "line",
         "scope": "Push",
         "vars": {
@@ -621,7 +713,7 @@
         "output": []
       },
       {
-        "line": 28,
+        "line": 49,
         "event": "line",
         "scope": "Push",
         "vars": {
@@ -701,7 +793,7 @@
         "output": []
       },
       {
-        "line": 29,
+        "line": 50,
         "event": "line",
         "scope": "Pop",
         "vars": {
@@ -793,7 +885,7 @@
         "output": []
       },
       {
-        "line": 29,
+        "line": 50,
         "event": "return",
         "scope": "<module>",
         "vars": {
@@ -809,7 +901,7 @@
         "output": []
       },
       {
-        "line": 30,
+        "line": 51,
         "event": "line",
         "scope": "<module>",
         "vars": {
@@ -827,7 +919,7 @@
         ]
       },
       {
-        "line": 31,
+        "line": 52,
         "event": "line",
         "scope": "Push",
         "vars": {
@@ -930,6 +1022,15 @@
       "TopPointer = 0",
       "",
       "",
+      "def Push(Item):",
+      "    global TopPointer",
+      "    if TopPointer == StackSize:",
+      "        print(\"Stack full\")",
+      "    else:",
+      "        Stack[TopPointer] = Item",
+      "        TopPointer = TopPointer + 1",
+      "",
+      "",
       "def Pop():",
       "    global TopPointer",
       "    if TopPointer == 0:",
@@ -939,6 +1040,27 @@
       "        TopPointer = TopPointer - 1",
       "        Item = Stack[TopPointer]",
       "        return Item",
+      "",
+      "",
+      "def Peek():",
+      "    if TopPointer == 0:",
+      "        return \"\"",
+      "    else:",
+      "        return Stack[TopPointer - 1]",
+      "",
+      "",
+      "def IsEmpty():",
+      "    if TopPointer == 0:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "def IsFull():",
+      "    if TopPointer == StackSize:",
+      "        return True",
+      "    else:",
+      "        return False",
       "",
       "",
       "# Main program",
@@ -1000,7 +1122,67 @@
         "output": []
       },
       {
-        "line": 18,
+        "line": 15,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 26,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 33,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 40,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 48,
         "event": "line",
         "scope": "Pop",
         "vars": {
@@ -1015,7 +1197,7 @@
         "output": []
       },
       {
-        "line": 7,
+        "line": 16,
         "event": "global",
         "scope": "Pop",
         "vars": {
@@ -1030,7 +1212,7 @@
         "output": []
       },
       {
-        "line": 8,
+        "line": 17,
         "event": "line",
         "scope": "Pop",
         "vars": {
@@ -1045,41 +1227,41 @@
         "output": []
       },
       {
-        "line": 9,
-        "event": "line",
-        "scope": "Pop",
-        "vars": {
-          "StackSize": 3,
-          "Stack": [
-            "",
-            "",
-            ""
-          ],
-          "TopPointer": 0
-        },
-        "output": [
-          "Stack empty"
-        ]
-      },
-      {
-        "line": 10,
-        "event": "line",
-        "scope": "Pop",
-        "vars": {
-          "StackSize": 3,
-          "Stack": [
-            "",
-            "",
-            ""
-          ],
-          "TopPointer": 0
-        },
-        "output": [
-          "Stack empty"
-        ]
-      },
-      {
         "line": 18,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": [
+          "Stack empty"
+        ]
+      },
+      {
+        "line": 19,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": [
+          "Stack empty"
+        ]
+      },
+      {
+        "line": 48,
         "event": "return",
         "scope": "<module>",
         "vars": {
@@ -1097,7 +1279,7 @@
         ]
       },
       {
-        "line": 19,
+        "line": 49,
         "event": "line",
         "scope": "<module>",
         "vars": {
@@ -1120,8 +1302,8 @@
   "start-at-0/stack-full": {
     "source": [
       "StackSize = 3",
-      "Stack = [\"A\", \"B\", \"C\"]",
-      "TopPointer = 3",
+      "Stack = [\"\"] * StackSize",
+      "TopPointer = 0",
       "",
       "",
       "def Push(Item):",
@@ -1133,7 +1315,42 @@
       "        TopPointer = TopPointer + 1",
       "",
       "",
+      "def Pop():",
+      "    global TopPointer",
+      "    if TopPointer == 0:",
+      "        print(\"Stack empty\")",
+      "        return \"\"",
+      "    else:",
+      "        TopPointer = TopPointer - 1",
+      "        Item = Stack[TopPointer]",
+      "        return Item",
+      "",
+      "",
+      "def Peek():",
+      "    if TopPointer == 0:",
+      "        return \"\"",
+      "    else:",
+      "        return Stack[TopPointer - 1]",
+      "",
+      "",
+      "def IsEmpty():",
+      "    if TopPointer == 0:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "def IsFull():",
+      "    if TopPointer == StackSize:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
       "# Main program",
+      "Push(\"A\")",
+      "Push(\"B\")",
+      "Push(\"C\")",
       "Push(\"D\")"
     ],
     "steps": [
@@ -1153,9 +1370,9 @@
         "vars": {
           "StackSize": 3,
           "Stack": [
-            "A",
-            "B",
-            "C"
+            "",
+            "",
+            ""
           ]
         },
         "output": []
@@ -1167,11 +1384,11 @@
         "vars": {
           "StackSize": 3,
           "Stack": [
-            "A",
-            "B",
-            "C"
+            "",
+            "",
+            ""
           ],
-          "TopPointer": 3
+          "TopPointer": 0
         },
         "output": []
       },
@@ -1182,16 +1399,316 @@
         "vars": {
           "StackSize": 3,
           "Stack": [
-            "A",
-            "B",
-            "C"
+            "",
+            "",
+            ""
           ],
-          "TopPointer": 3
+          "TopPointer": 0
         },
         "output": []
       },
       {
-        "line": 16,
+        "line": 15,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 26,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 33,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 40,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0
+        },
+        "output": []
+      },
+      {
+        "line": 48,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 7,
+        "event": "global",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 12,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 49,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 7,
+        "event": "global",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 12,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 2,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 50,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 7,
+        "event": "global",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            "C"
+          ],
+          "TopPointer": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 12,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            "C"
+          ],
+          "TopPointer": 3,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 51,
         "event": "line",
         "scope": "Push",
         "vars": {
@@ -1272,6 +1789,17 @@
       "    else:",
       "        TopPointer = TopPointer + 1",
       "        Stack[TopPointer] = Item",
+      "",
+      "",
+      "def Pop():",
+      "    global TopPointer",
+      "    if TopPointer == -1:",
+      "        print(\"Stack empty\")",
+      "        return \"\"",
+      "    else:",
+      "        Item = Stack[TopPointer]",
+      "        TopPointer = TopPointer - 1",
+      "        return Item",
       "",
       "",
       "def Peek():",
@@ -1371,7 +1899,7 @@
         "output": []
       },
       {
-        "line": 22,
+        "line": 26,
         "event": "line",
         "scope": "<module>",
         "vars": {
@@ -1386,7 +1914,7 @@
         "output": []
       },
       {
-        "line": 29,
+        "line": 33,
         "event": "line",
         "scope": "<module>",
         "vars": {
@@ -1401,7 +1929,22 @@
         "output": []
       },
       {
-        "line": 37,
+        "line": 40,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 48,
         "event": "line",
         "scope": "IsEmpty",
         "vars": {
@@ -1416,7 +1959,7 @@
         "output": []
       },
       {
-        "line": 23,
+        "line": 34,
         "event": "line",
         "scope": "IsEmpty",
         "vars": {
@@ -1431,7 +1974,7 @@
         "output": []
       },
       {
-        "line": 24,
+        "line": 35,
         "event": "line",
         "scope": "IsEmpty",
         "vars": {
@@ -1446,7 +1989,7 @@
         "output": []
       },
       {
-        "line": 37,
+        "line": 48,
         "event": "return",
         "scope": "<module>",
         "vars": {
@@ -1463,7 +2006,7 @@
         ]
       },
       {
-        "line": 38,
+        "line": 49,
         "event": "line",
         "scope": "Push",
         "vars": {
@@ -1553,7 +2096,7 @@
         ]
       },
       {
-        "line": 39,
+        "line": 50,
         "event": "line",
         "scope": "Peek",
         "vars": {
@@ -1570,7 +2113,7 @@
         ]
       },
       {
-        "line": 16,
+        "line": 27,
         "event": "line",
         "scope": "Peek",
         "vars": {
@@ -1587,7 +2130,7 @@
         ]
       },
       {
-        "line": 19,
+        "line": 30,
         "event": "line",
         "scope": "Peek",
         "vars": {
@@ -1604,7 +2147,7 @@
         ]
       },
       {
-        "line": 39,
+        "line": 50,
         "event": "return",
         "scope": "<module>",
         "vars": {
@@ -1622,7 +2165,7 @@
         ]
       },
       {
-        "line": 40,
+        "line": 51,
         "event": "line",
         "scope": "IsFull",
         "vars": {
@@ -1640,7 +2183,7 @@
         ]
       },
       {
-        "line": 30,
+        "line": 41,
         "event": "line",
         "scope": "IsFull",
         "vars": {
@@ -1658,7 +2201,7 @@
         ]
       },
       {
-        "line": 33,
+        "line": 44,
         "event": "line",
         "scope": "IsFull",
         "vars": {
@@ -1676,7 +2219,7 @@
         ]
       },
       {
-        "line": 40,
+        "line": 51,
         "event": "return",
         "scope": "<module>",
         "vars": {
@@ -1721,6 +2264,27 @@
       "        Item = Stack[TopPointer]",
       "        TopPointer = TopPointer - 1",
       "        return Item",
+      "",
+      "",
+      "def Peek():",
+      "    if TopPointer == -1:",
+      "        return \"\"",
+      "    else:",
+      "        return Stack[TopPointer]",
+      "",
+      "",
+      "def IsEmpty():",
+      "    if TopPointer == -1:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "def IsFull():",
+      "    if TopPointer == StackSize - 1:",
+      "        return True",
+      "    else:",
+      "        return False",
       "",
       "",
       "# Main program",
@@ -1800,7 +2364,52 @@
         "output": []
       },
       {
-        "line": 27,
+        "line": 26,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 33,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 40,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 48,
         "event": "line",
         "scope": "Push",
         "vars": {
@@ -1880,7 +2489,7 @@
         "output": []
       },
       {
-        "line": 28,
+        "line": 49,
         "event": "line",
         "scope": "Push",
         "vars": {
@@ -1960,7 +2569,7 @@
         "output": []
       },
       {
-        "line": 29,
+        "line": 50,
         "event": "line",
         "scope": "Pop",
         "vars": {
@@ -2053,7 +2662,7 @@
         "output": []
       },
       {
-        "line": 29,
+        "line": 50,
         "event": "return",
         "scope": "<module>",
         "vars": {
@@ -2069,7 +2678,7 @@
         "output": []
       },
       {
-        "line": 30,
+        "line": 51,
         "event": "line",
         "scope": "<module>",
         "vars": {
@@ -2087,7 +2696,7 @@
         ]
       },
       {
-        "line": 31,
+        "line": 52,
         "event": "line",
         "scope": "Push",
         "vars": {
@@ -2190,6 +2799,15 @@
       "TopPointer = -1",
       "",
       "",
+      "def Push(Item):",
+      "    global TopPointer",
+      "    if TopPointer == StackSize - 1:",
+      "        print(\"Stack full\")",
+      "    else:",
+      "        TopPointer = TopPointer + 1",
+      "        Stack[TopPointer] = Item",
+      "",
+      "",
       "def Pop():",
       "    global TopPointer",
       "    if TopPointer == -1:",
@@ -2199,6 +2817,27 @@
       "        Item = Stack[TopPointer]",
       "        TopPointer = TopPointer - 1",
       "        return Item",
+      "",
+      "",
+      "def Peek():",
+      "    if TopPointer == -1:",
+      "        return \"\"",
+      "    else:",
+      "        return Stack[TopPointer]",
+      "",
+      "",
+      "def IsEmpty():",
+      "    if TopPointer == -1:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "def IsFull():",
+      "    if TopPointer == StackSize - 1:",
+      "        return True",
+      "    else:",
+      "        return False",
       "",
       "",
       "# Main program",
@@ -2260,7 +2899,67 @@
         "output": []
       },
       {
-        "line": 18,
+        "line": 15,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 26,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 33,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 40,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 48,
         "event": "line",
         "scope": "Pop",
         "vars": {
@@ -2275,7 +2974,7 @@
         "output": []
       },
       {
-        "line": 7,
+        "line": 16,
         "event": "global",
         "scope": "Pop",
         "vars": {
@@ -2290,7 +2989,7 @@
         "output": []
       },
       {
-        "line": 8,
+        "line": 17,
         "event": "line",
         "scope": "Pop",
         "vars": {
@@ -2305,41 +3004,41 @@
         "output": []
       },
       {
-        "line": 9,
-        "event": "line",
-        "scope": "Pop",
-        "vars": {
-          "StackSize": 3,
-          "Stack": [
-            "",
-            "",
-            ""
-          ],
-          "TopPointer": -1
-        },
-        "output": [
-          "Stack empty"
-        ]
-      },
-      {
-        "line": 10,
-        "event": "line",
-        "scope": "Pop",
-        "vars": {
-          "StackSize": 3,
-          "Stack": [
-            "",
-            "",
-            ""
-          ],
-          "TopPointer": -1
-        },
-        "output": [
-          "Stack empty"
-        ]
-      },
-      {
         "line": 18,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": [
+          "Stack empty"
+        ]
+      },
+      {
+        "line": 19,
+        "event": "line",
+        "scope": "Pop",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": [
+          "Stack empty"
+        ]
+      },
+      {
+        "line": 48,
         "event": "return",
         "scope": "<module>",
         "vars": {
@@ -2357,7 +3056,7 @@
         ]
       },
       {
-        "line": 19,
+        "line": 49,
         "event": "line",
         "scope": "<module>",
         "vars": {
@@ -2380,8 +3079,8 @@
   "start-at-minus-1/stack-full": {
     "source": [
       "StackSize = 3",
-      "Stack = [\"A\", \"B\", \"C\"]",
-      "TopPointer = 2",
+      "Stack = [\"\"] * StackSize",
+      "TopPointer = -1",
       "",
       "",
       "def Push(Item):",
@@ -2393,7 +3092,42 @@
       "        Stack[TopPointer] = Item",
       "",
       "",
+      "def Pop():",
+      "    global TopPointer",
+      "    if TopPointer == -1:",
+      "        print(\"Stack empty\")",
+      "        return \"\"",
+      "    else:",
+      "        Item = Stack[TopPointer]",
+      "        TopPointer = TopPointer - 1",
+      "        return Item",
+      "",
+      "",
+      "def Peek():",
+      "    if TopPointer == -1:",
+      "        return \"\"",
+      "    else:",
+      "        return Stack[TopPointer]",
+      "",
+      "",
+      "def IsEmpty():",
+      "    if TopPointer == -1:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
+      "def IsFull():",
+      "    if TopPointer == StackSize - 1:",
+      "        return True",
+      "    else:",
+      "        return False",
+      "",
+      "",
       "# Main program",
+      "Push(\"A\")",
+      "Push(\"B\")",
+      "Push(\"C\")",
       "Push(\"D\")"
     ],
     "steps": [
@@ -2413,9 +3147,9 @@
         "vars": {
           "StackSize": 3,
           "Stack": [
-            "A",
-            "B",
-            "C"
+            "",
+            "",
+            ""
           ]
         },
         "output": []
@@ -2427,11 +3161,11 @@
         "vars": {
           "StackSize": 3,
           "Stack": [
-            "A",
-            "B",
-            "C"
+            "",
+            "",
+            ""
           ],
-          "TopPointer": 2
+          "TopPointer": -1
         },
         "output": []
       },
@@ -2442,16 +3176,316 @@
         "vars": {
           "StackSize": 3,
           "Stack": [
-            "A",
-            "B",
-            "C"
+            "",
+            "",
+            ""
           ],
-          "TopPointer": 2
+          "TopPointer": -1
         },
         "output": []
       },
       {
-        "line": 16,
+        "line": 15,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 26,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 33,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 40,
+        "event": "line",
+        "scope": "<module>",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1
+        },
+        "output": []
+      },
+      {
+        "line": 48,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 7,
+        "event": "global",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": -1,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 12,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "A"
+        },
+        "output": []
+      },
+      {
+        "line": 49,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 7,
+        "event": "global",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 0,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 12,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "B"
+        },
+        "output": []
+      },
+      {
+        "line": 50,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 7,
+        "event": "global",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 8,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 1,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 11,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            ""
+          ],
+          "TopPointer": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 12,
+        "event": "line",
+        "scope": "Push",
+        "vars": {
+          "StackSize": 3,
+          "Stack": [
+            "A",
+            "B",
+            "C"
+          ],
+          "TopPointer": 2,
+          "Item": "C"
+        },
+        "output": []
+      },
+      {
+        "line": 51,
         "event": "line",
         "scope": "Push",
         "vars": {

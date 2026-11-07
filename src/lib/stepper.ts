@@ -84,12 +84,41 @@ function buildRows(trace: Trace, columns: TraceColumn[]) {
   return rows;
 }
 
+export interface FunctionRange {
+  name: string;
+  start: number;
+  end: number;
+}
+
+// Finds each function's lines and the first line of the main program.
+function analyseProgram(source: string[]) {
+  const functions: FunctionRange[] = [];
+  source.forEach((text, index) => {
+    const definition = text.match(/^def (\w+)\(/);
+    if (definition) {
+      functions.push({ name: definition[1], start: index + 1, end: index + 1 });
+    } else if (/^\s+\S/.test(text) && functions.length) {
+      functions[functions.length - 1].end = index + 1;
+    }
+  });
+  const lastFunctionEnd = functions.at(-1)?.end ?? 0;
+  const mainStart =
+    source.findIndex((text, index) => index >= lastFunctionEnd && /^[^\s#]/.test(text)) + 1;
+  return { functions, mainStart };
+}
+
 export function buildScenario(
   config: ScenarioConfig,
   trace: Trace,
   explanations: Record<string, Explain>,
   columns: TraceColumn[],
 ) {
+  const { functions, mainStart } = analyseProgram(trace.source);
+  // Each main program line is one operation, e.g. Push("A"), and owns every
+  // step it causes inside a function.
+  const operations: { label: string; isCode: boolean; step: number }[] = [];
+  let operationLine = 0;
+
   const steps = trace.steps.map((step, index) => {
     const lineText = trace.source[step.line - 1].trim();
     const explain = explanations[lineText];
@@ -99,18 +128,31 @@ export function buildScenario(
     const context = { step, previous: trace.steps[index - 1] };
     const text = typeof explain === "function" ? explain(context) : explain;
     const isLast = index === trace.steps.length - 1;
+
+    const isMainLine = step.line >= mainStart;
+    if (!isMainLine && operations.length === 0) {
+      operations.push({ label: "Setup", isCode: false, step: index });
+    } else if (isMainLine && step.line !== operationLine) {
+      operationLine = step.line;
+      operations.push({ label: lineText, isCode: true, step: index });
+    }
+
     return {
       line: step.line,
       scope: step.scope,
       vars: step.vars,
       output: step.output,
       text: isLast ? `${text} ${config.ending}` : text,
+      operation: operations.length - 1,
+      inFunction: !isMainLine && step.scope !== "<module>",
     };
   });
 
   return {
     ...config,
     lines: trace.source.map(highlightPython),
+    functions,
+    operations,
     columns: columns.map((column) => column.label),
     rows: buildRows(trace, columns),
     steps,

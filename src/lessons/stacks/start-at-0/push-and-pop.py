@@ -23,6 +23,27 @@ def Pop():
         return Item
 
 
+def Peek():
+    if TopPointer == 0:
+        return ""
+    else:
+        return Stack[TopPointer - 1]
+
+
+def IsEmpty():
+    if TopPointer == 0:
+        return True
+    else:
+        return False
+
+
+def IsFull():
+    if TopPointer == StackSize:
+        return True
+    else:
+        return False
+
+
 # Main program
 Push("A")
 Push("B")

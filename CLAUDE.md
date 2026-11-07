@@ -24,7 +24,13 @@ told what comes next.
 
 ## Working on lessons
 
-- `npm run dev` starts the site. `npm run build` checks it builds.
+- `npm run dev` starts the site at `http://localhost:4321/cs-alevel-explainer/`.
+  `npm run build` checks it builds. `npm test` runs the Playwright browser tests.
+- When run by an AI agent, Astro starts dev and preview servers in the background,
+  so Playwright reports "webServer exited early". Run `npm run build`, then
+  `npx astro preview --port 4322` (it backgrounds itself), then `npm test`, and
+  `npx astro preview stop` afterwards.
+- Pushing to `main` runs the tests and deploys to GitHub Pages.
 - Each lesson's Python files are the source of truth. After changing one, run
   `npm run trace` to regenerate `traces.json`, which drives the step-through and
   trace table. Never edit `traces.json` by hand.
